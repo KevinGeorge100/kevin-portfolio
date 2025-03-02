@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0A192F;
+    color: #E0E0E0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #112240;
+    padding: 20px;
+    color: #64FFDA;
+}
+
+.about img {
+    width: 150px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+}
+
+.skills ul, .connect ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills li, .connect li {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    background-color: #112240;
+    color: #64FFDA;
+    border-radius: 5px;
+}
+
+a {
+    color: #64FFDA;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #112240;
+}
