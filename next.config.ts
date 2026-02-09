@@ -8,7 +8,10 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  output: 'export',
+  basePath: '/kevin-portfolio',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

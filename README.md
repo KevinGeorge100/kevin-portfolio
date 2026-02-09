@@ -1,29 +1,29 @@
 # Kevin George | DevOps Portfolio
 
-This is a modern, high-impact DevOps Engineer portfolio built with Next.js, Tailwind CSS, and Framer Motion-inspired components.
+This is a modern, high-impact DevOps Engineer portfolio built with Next.js, Tailwind CSS, and Shadcn/UI.
 
-## Deployment Instructions
+## Deployment Instructions (GitHub Pages)
 
-To push this project to your GitHub repository:
+1. **Configure for Static Export**:
+   The project is configured with `output: 'export'` and a `basePath` in `next.config.ts`.
 
-1. **Remove the old remote** (if any):
+2. **GitHub Actions**:
+   A deployment workflow is located in `.github/workflows/deploy.yml`.
+
+3. **Enable Pages on GitHub**:
+   - Go to your repository on GitHub.
+   - Click **Settings** > **Pages**.
+   - Under **Build and deployment** > **Source**, change it to **GitHub Actions**.
+
+4. **Push to Main**:
    ```bash
-   git remote remove origin
-   ```
-
-2. **Add the correct remote**:
-   ```bash
-   git remote add origin https://github.com/KevinGeorge100/kevin-portfolio.git
-   ```
-
-3. **Push to main**:
-   ```bash
-   git push -u origin main
+   git add .
+   git commit -m "Configure GitHub Pages deployment"
+   git push origin main
    ```
 
 ## Tech Stack
 - **Framework**: Next.js 15
 - **Styling**: Tailwind CSS
 - **Components**: Shadcn/UI
-- **Animations**: Custom Reveal-on-scroll & Spotlight effects
-- **Icons**: Lucide React
+- **Deployment**: GitHub Pages (via Actions)
