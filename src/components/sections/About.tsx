@@ -1,3 +1,4 @@
+
 import { Terminal, Server, Cpu, Code2, MapPin, Globe2 } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { Magnetic } from "@/components/ui/magnetic";
@@ -62,7 +63,6 @@ export function About() {
           </div>
 
           <div className="relative reveal-on-scroll delay-200">
-            {/* Elegant Philosophy Block */}
             <div className="clay p-8 md:p-12 rounded-[3rem] border border-white/10 bg-white/5 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-[60px] rounded-full -mr-16 -mt-16"></div>
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent/20 blur-[60px] rounded-full -ml-16 -mb-16"></div>
@@ -83,7 +83,6 @@ export function About() {
               </div>
             </div>
             
-            {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-6 lg:-right-12">
               <Magnetic strength={0.2}>
                 <div className="w-32 h-32 bg-accent rounded-full border-4 border-background flex items-center justify-center rotate-12 shadow-2xl">
@@ -102,7 +101,7 @@ export function About() {
               key={i} 
               className="reveal-on-scroll" 
               style={{ transitionDelay: `${i * 100}ms` }}
-              spotlightColor={card.color === 'var(--primary)' ? 'rgba(var(--primary), 0.1)' : 'rgba(var(--accent), 0.1)'}
+              spotlightColor={card.color === 'var(--primary)' ? 'rgba(121, 255, 0, 0.1)' : 'rgba(168, 85, 247, 0.1)'}
             >
               <div className="clay p-8 h-full border border-white/5 hover:border-white/20 transition-all duration-500 group">
                 <div className="mb-6 p-4 w-fit rounded-2xl clay bg-white/5 text-primary group-hover:bg-primary group-hover:text-black transition-all duration-500">
@@ -118,7 +117,6 @@ export function About() {
         </div>
       </div>
       
-      {/* Background Decors */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-primary/5 rounded-full blur-[120px] -z-0"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[150px] -z-0"></div>
     </section>
