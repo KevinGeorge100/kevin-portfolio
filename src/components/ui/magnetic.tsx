@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
@@ -8,7 +7,7 @@ interface MagneticProps {
   strength?: number;
 }
 
-export const Magnetic = ({ children, strength = 0.3 }: MagneticProps) => {
+export const Magnetic = ({ children, strength = 0.5 }: MagneticProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -21,8 +20,8 @@ export const Magnetic = ({ children, strength = 0.3 }: MagneticProps) => {
       const y = clientY - (top + height / 2);
       const distance = Math.sqrt(x * x + y * y);
       
-      // Magnetic pull radius: 100px
-      if (distance < 100) {
+      // Magnetic pull radius: 120px for better feel
+      if (distance < 120) {
         setPosition({ x: x * strength, y: y * strength });
       } else {
         setPosition({ x: 0, y: 0 });
@@ -38,7 +37,7 @@ export const Magnetic = ({ children, strength = 0.3 }: MagneticProps) => {
       ref={ref}
       style={{
         transform: `translate(${position.x}px, ${position.y}px)`,
-        transition: "transform 0.4s cubic-bezier(0.23, 1, 0.32, 1)",
+        transition: "transform 0.3s cubic-bezier(0.23, 1, 0.32, 1)",
       }}
       className="inline-block"
     >

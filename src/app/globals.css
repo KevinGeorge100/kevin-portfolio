@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 230 50% 2%;
+    --background: 240 10% 2%;
     --foreground: 210 40% 98%;
-    --card: 230 50% 5%;
+    --card: 240 10% 4%;
     --card-foreground: 210 40% 98%;
-    --popover: 230 50% 5%;
+    --popover: 240 10% 4%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 100% 66%;
-    --primary-foreground: 230 50% 2%;
-    --secondary: 230 30% 12%;
+    --primary: 45 93% 47%;
+    --primary-foreground: 240 10% 2%;
+    --secondary: 240 10% 12%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 230 20% 15%;
-    --muted-foreground: 215 20% 70%;
-    --accent: 280 80% 60%;
+    --muted: 240 10% 15%;
+    --muted-foreground: 215 10% 70%;
+    --accent: 335 85% 55%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 230 30% 15%;
-    --input: 230 30% 15%;
-    --ring: 210 100% 66%;
-    --radius: 1.5rem;
+    --border: 240 10% 12%;
+    --input: 240 10% 12%;
+    --ring: 45 93% 47%;
+    --radius: 2.5rem;
   }
 }
 
@@ -41,27 +41,27 @@
   .clay {
     @apply bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2.5rem];
     box-shadow: 
-      0 12px 40px rgba(0, 0, 0, 0.5),
-      inset 1px 1px 2px rgba(255, 255, 255, 0.15),
-      inset -1px -1px 2px rgba(0, 0, 0, 0.25);
+      0 12px 40px rgba(0, 0, 0, 0.6),
+      inset 1px 1px 2px rgba(255, 255, 255, 0.1),
+      inset -1px -1px 2px rgba(0, 0, 0, 0.4);
     will-change: transform, box-shadow;
   }
 
   .clay-primary {
     @apply bg-primary text-primary-foreground border-white/20 rounded-[2.5rem];
     box-shadow: 
-      12px 12px 30px rgba(0, 150, 255, 0.25),
-      inset 6px 6px 15px rgba(255, 255, 255, 0.3),
-      inset -6px -6px 15px rgba(0, 0, 0, 0.2);
+      12px 12px 30px hsla(45, 93%, 47%, 0.25),
+      inset 4px 4px 10px rgba(255, 255, 255, 0.4),
+      inset -4px -4px 10px rgba(0, 0, 0, 0.2);
     will-change: transform, scale;
   }
 
   .clay-accent {
     @apply bg-accent text-accent-foreground border-white/20 rounded-[2.5rem];
     box-shadow: 
-      12px 12px 30px rgba(160, 32, 240, 0.25),
-      inset 6px 6px 15px rgba(255, 255, 255, 0.3),
-      inset -6px -6px 15px rgba(0, 0, 0, 0.2);
+      12px 12px 30px hsla(335, 85%, 55%, 0.25),
+      inset 4px 4px 10px rgba(255, 255, 255, 0.4),
+      inset -4px -4px 10px rgba(0, 0, 0, 0.2);
     will-change: transform, scale;
   }
 }

@@ -1,4 +1,3 @@
-
 'use client';
 import { useEffect, useRef } from 'react';
 
@@ -23,16 +22,16 @@ function SplashCursor({
   SIM_RESOLUTION = 128,
   DYE_RESOLUTION = 1440,
   CAPTURE_RESOLUTION = 512,
-  DENSITY_DISSIPATION = 3.5,
-  VELOCITY_DISSIPATION = 2,
+  DENSITY_DISSIPATION = 4.0, // Increased for snappier cleanup
+  VELOCITY_DISSIPATION = 2.5, // Increased for snappier cleanup
   PRESSURE = 0.1,
   PRESSURE_ITERATIONS = 20,
-  CURL = 3,
+  CURL = 4, // Increased for more turbulence
   SPLAT_RADIUS = 0.2,
-  SPLAT_FORCE = 6000,
+  SPLAT_FORCE = 8000, // Increased for better responsiveness
   SHADING = true,
-  COLOR_UPDATE_SPEED = 10,
-  BACK_COLOR = { r: 0.5, g: 0, b: 0 },
+  COLOR_UPDATE_SPEED = 12, // Faster color transition
+  BACK_COLOR = { r: 0, g: 0, b: 0 },
   TRANSPARENT = true
 }: SplashCursorProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
