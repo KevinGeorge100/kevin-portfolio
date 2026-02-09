@@ -1,5 +1,6 @@
 
 import { CheckCircle2, Cloud, Terminal, Code } from "lucide-react";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 const skillCategories = [
   {
@@ -40,43 +41,47 @@ export function Skills() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
           {skillCategories.map((category, index) => (
-            <div 
+            <SpotlightCard 
               key={category.title} 
-              className={`clay p-10 hover:scale-105 transition-all duration-300 reveal-on-scroll`} 
+              className="reveal-on-scroll" 
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className={`mb-8 inline-flex p-4 ${category.variant === 'clay-primary' ? 'clay-primary' : category.variant === 'clay-accent' ? 'clay-accent' : 'clay text-primary'}`}>
-                {category.icon}
+              <div className={`clay p-10 h-full hover:scale-[1.02] transition-all duration-300`}>
+                <div className={`mb-8 inline-flex p-4 ${category.variant === 'clay-primary' ? 'clay-primary' : category.variant === 'clay-accent' ? 'clay-accent' : 'clay text-primary'}`}>
+                  {category.icon}
+                </div>
+                <h3 className="text-2xl font-extrabold mb-8">{category.title}</h3>
+                <ul className="space-y-5">
+                  {category.skills.map(skill => (
+                    <li key={skill} className="flex items-center text-muted-foreground font-medium">
+                      <CheckCircle2 className="h-5 w-5 text-accent mr-4 flex-shrink-0" />
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-2xl font-extrabold mb-8">{category.title}</h3>
-              <ul className="space-y-5">
-                {category.skills.map(skill => (
-                  <li key={skill} className="flex items-center text-muted-foreground font-medium">
-                    <CheckCircle2 className="h-5 w-5 text-accent mr-4 flex-shrink-0" />
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
 
         <div className="reveal-on-scroll">
-          <div className="clay-primary p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="max-w-md text-center md:text-left">
-              <h3 className="text-3xl font-extrabold mb-4">Community Engagement</h3>
-              <p className="text-primary-foreground/90 text-lg leading-relaxed">
-                Beyond technical skills, I am deeply involved in fostering inclusive and knowledge-sharing environments.
-              </p>
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)">
+            <div className="clay-primary p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
+              <div className="max-w-md text-center md:text-left">
+                <h3 className="text-3xl font-extrabold mb-4">Community Engagement</h3>
+                <p className="text-primary-foreground/90 text-lg leading-relaxed">
+                  Beyond technical skills, I am deeply involved in fostering inclusive and knowledge-sharing environments.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4 justify-center md:justify-end">
+                {softSkills.map(skill => (
+                  <span key={skill} className="px-6 py-3 clay bg-white/20 border-white/30 text-white font-bold text-sm backdrop-blur-md hover:scale-110 transition-transform">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-wrap gap-4 justify-center md:justify-end">
-              {softSkills.map(skill => (
-                <span key={skill} className="px-6 py-3 clay bg-white/20 border-white/30 text-white font-bold text-sm backdrop-blur-md hover:scale-110 transition-transform">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
+          </SpotlightCard>
         </div>
       </div>
       

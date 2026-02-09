@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 const projects = [
   {
@@ -55,40 +56,42 @@ export function Projects() {
           {projects.map((project, index) => {
             const img = PlaceHolderImages.find(p => p.id === project.id);
             return (
-              <div 
+              <SpotlightCard 
                 key={project.id} 
-                className="clay p-4 group hover:scale-[1.02] transition-all duration-500 reveal-on-scroll" 
+                className="reveal-on-scroll" 
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="relative aspect-video rounded-[1.5rem] overflow-hidden mb-6">
-                  <Image
-                    src={img?.imageUrl || `https://picsum.photos/seed/${project.id}/800/600`}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]"></div>
-                </div>
-                <div className="px-4 pb-4">
-                  <div className="flex gap-2 flex-wrap mb-4">
-                    {project.tags.map(tag => (
-                      <Badge key={tag} className="clay text-[10px] bg-white/50 text-primary uppercase font-bold px-3 py-1">{tag}</Badge>
-                    ))}
+                <div className="clay p-4 group h-full transition-all duration-500">
+                  <div className="relative aspect-video rounded-[1.5rem] overflow-hidden mb-6">
+                    <Image
+                      src={img?.imageUrl || `https://picsum.photos/seed/${project.id}/800/600`}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px]"></div>
                   </div>
-                  <h3 className="text-2xl font-extrabold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-6 line-clamp-2 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex gap-4">
-                    <Link href={project.link} className="flex-1 text-center py-2 clay-primary text-xs font-bold hover:scale-105 transition-all">
-                      Demo
-                    </Link>
-                    <Link href={project.repo} className="flex-1 text-center py-2 clay text-xs font-bold hover:scale-105 transition-all">
-                      Code
-                    </Link>
+                  <div className="px-4 pb-4">
+                    <div className="flex gap-2 flex-wrap mb-4">
+                      {project.tags.map(tag => (
+                        <Badge key={tag} className="clay text-[10px] bg-white/50 text-primary uppercase font-bold px-3 py-1">{tag}</Badge>
+                      ))}
+                    </div>
+                    <h3 className="text-2xl font-extrabold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-6 line-clamp-2 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex gap-4">
+                      <Link href={project.link} className="flex-1 text-center py-2 clay-primary text-xs font-bold hover:scale-105 transition-all">
+                        Demo
+                      </Link>
+                      <Link href={project.repo} className="flex-1 text-center py-2 clay text-xs font-bold hover:scale-105 transition-all">
+                        Code
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             );
           })}
         </div>

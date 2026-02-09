@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { cn } from "@/lib/utils";
+import { Magnetic } from "@/components/ui/magnetic";
 
 export function Hero() {
   const portrait = PlaceHolderImages.find(img => img.id === "hero-portrait");
@@ -27,21 +27,29 @@ export function Hero() {
               CS Undergraduate student passionate about automating infrastructure, streamlining deployments, and building robust cloud-native systems.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
-              <Button asChild size="lg" className="clay-primary h-14 px-10 text-lg hover:scale-105 transition-transform">
-                <Link href="#projects">
-                  View My Projects <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+              <Magnetic strength={0.2}>
+                <Button asChild size="lg" className="clay-primary h-14 px-10 text-lg hover:scale-105 transition-transform">
+                  <Link href="#projects">
+                    View My Projects <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </Magnetic>
               <div className="flex items-center gap-4">
-                <Link href="https://github.com" className="p-3 clay hover:scale-110 transition-all text-primary" aria-label="GitHub">
-                  <Github className="h-6 w-6" />
-                </Link>
-                <Link href="https://linkedin.com" className="p-3 clay hover:scale-110 transition-all text-primary" aria-label="LinkedIn">
-                  <Linkedin className="h-6 w-6" />
-                </Link>
-                <Link href="https://twitter.com" className="p-3 clay hover:scale-110 transition-all text-primary" aria-label="Twitter">
-                  <Twitter className="h-6 w-6" />
-                </Link>
+                <Magnetic strength={0.4}>
+                  <Link href="https://github.com" className="p-3 clay hover:bg-white/50 transition-all text-primary" aria-label="GitHub">
+                    <Github className="h-6 w-6" />
+                  </Link>
+                </Magnetic>
+                <Magnetic strength={0.4}>
+                  <Link href="https://linkedin.com" className="p-3 clay hover:bg-white/50 transition-all text-primary" aria-label="LinkedIn">
+                    <Linkedin className="h-6 w-6" />
+                  </Link>
+                </Magnetic>
+                <Magnetic strength={0.4}>
+                  <Link href="https://twitter.com" className="p-3 clay hover:bg-white/50 transition-all text-primary" aria-label="Twitter">
+                    <Twitter className="h-6 w-6" />
+                  </Link>
+                </Magnetic>
               </div>
             </div>
           </div>
