@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 240 10% 2%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
     --card: 240 10% 4%;
     --card-foreground: 210 40% 98%;
     --popover: 240 10% 4%;
     --popover-foreground: 210 40% 98%;
-    --primary: 45 93% 47%;
-    --primary-foreground: 240 10% 2%;
+    --primary: 75 100% 50%;
+    --primary-foreground: 0 0% 0%;
     --secondary: 240 10% 12%;
     --secondary-foreground: 210 40% 98%;
     --muted: 240 10% 15%;
-    --muted-foreground: 215 10% 70%;
-    --accent: 335 85% 55%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 270 100% 60%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 240 10% 12%;
     --input: 240 10% 12%;
-    --ring: 45 93% 47%;
-    --radius: 2.5rem;
+    --ring: 75 100% 50%;
+    --radius: 2rem;
   }
 }
 
@@ -32,37 +32,25 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground scroll-smooth antialiased selection:bg-primary selection:text-primary-foreground;
+    @apply bg-background text-foreground scroll-smooth antialiased selection:bg-primary selection:text-primary-foreground font-sans;
     text-rendering: optimizeLegibility;
   }
 }
 
 @layer utilities {
   .clay {
-    @apply bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2.5rem];
+    @apply bg-white/5 backdrop-blur-2xl border border-white/10;
     box-shadow: 
       0 12px 40px rgba(0, 0, 0, 0.6),
-      inset 1px 1px 2px rgba(255, 255, 255, 0.1),
-      inset -1px -1px 2px rgba(0, 0, 0, 0.4);
-    will-change: transform, box-shadow;
+      inset 1px 1px 2px rgba(255, 255, 255, 0.1);
   }
 
-  .clay-primary {
-    @apply bg-primary text-primary-foreground border-white/20 rounded-[2.5rem];
-    box-shadow: 
-      12px 12px 30px hsla(45, 93%, 47%, 0.25),
-      inset 4px 4px 10px rgba(255, 255, 255, 0.4),
-      inset -4px -4px 10px rgba(0, 0, 0, 0.2);
-    will-change: transform, scale;
+  .text-glow {
+    text-shadow: 0 0 20px hsla(75, 100%, 50%, 0.3);
   }
 
-  .clay-accent {
-    @apply bg-accent text-accent-foreground border-white/20 rounded-[2.5rem];
-    box-shadow: 
-      12px 12px 30px hsla(335, 85%, 55%, 0.25),
-      inset 4px 4px 10px rgba(255, 255, 255, 0.4),
-      inset -4px -4px 10px rgba(0, 0, 0, 0.2);
-    will-change: transform, scale;
+  .purple-glow {
+    filter: drop-shadow(0 0 40px hsla(270, 100%, 60%, 0.4));
   }
 }
 
@@ -70,23 +58,11 @@
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  will-change: opacity, transform;
 }
 
 .reveal-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-@keyframes aurora {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-aurora {
-  animation: aurora 20s ease infinite;
-  will-change: background-position;
 }
 
 @keyframes blur-in {
