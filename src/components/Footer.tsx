@@ -13,7 +13,7 @@ export function Footer() {
             <Link href="https://github.com/kevingeorge" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
               <Github className="h-5 w-5" />
             </Link>
-            <Link href="https://linkedin.com" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link href="https://www.linkedin.com/in/kwingeorge/" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin className="h-5 w-5" />
             </Link>
             <Link href="https://twitter.com" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
