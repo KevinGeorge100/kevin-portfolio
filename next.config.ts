@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
   },
   output: 'export',
   basePath: '/kevin-portfolio',
+  assetPrefix: '/kevin-portfolio',
   trailingSlash: true,
   images: {
     unoptimized: true,
