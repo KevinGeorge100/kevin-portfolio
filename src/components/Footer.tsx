@@ -10,7 +10,7 @@ export function Footer() {
             © {new Date().getFullYear()} Kevin George. All rights reserved.
           </p>
           <div className="flex gap-4 mt-1">
-            <Link href="https://github.com/kevingeorge" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link href="https://github.com/KevinGeorge100" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
               <Github className="h-5 w-5" />
             </Link>
             <Link href="https://www.linkedin.com/in/kwingeorge/" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">

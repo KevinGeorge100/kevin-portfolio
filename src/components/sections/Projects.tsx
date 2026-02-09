@@ -11,24 +11,24 @@ const projects = [
     title: "K8s Microservices Lab",
     description: "A complete platform-as-a-service prototype featuring automated horizontal scaling and Redis caching.",
     tags: ["Kubernetes", "Docker", "Prometheus", "Helm"],
-    link: "https://github.com/kevingeorge",
-    repo: "https://github.com/kevingeorge"
+    link: "https://github.com/KevinGeorge100/kevin-portfolio",
+    repo: "https://github.com/KevinGeorge100/kevin-portfolio"
   },
   {
     id: "project-2",
     title: "GitOps CI/CD Pipeline",
     description: "Multi-environment deployment pipeline using GitHub Actions and ArgoCD for blue/green deployments.",
     tags: ["ArgoCD", "Terraform", "GitHub Actions"],
-    link: "https://github.com/kevingeorge",
-    repo: "https://github.com/kevingeorge"
+    link: "https://github.com/KevinGeorge100/kevin-portfolio",
+    repo: "https://github.com/KevinGeorge100/kevin-portfolio"
   },
   {
     id: "project-3",
     title: "Infra-Monitor Dashboard",
     description: "Real-time observability platform for monitoring server health and application latency using Grafana.",
     tags: ["Grafana", "Prometheus", "Node Exporter"],
-    link: "https://github.com/kevingeorge",
-    repo: "https://github.com/kevingeorge"
+    link: "https://github.com/KevinGeorge100/kevin-portfolio",
+    repo: "https://github.com/KevinGeorge100/kevin-portfolio"
   }
 ];
 
@@ -47,7 +47,7 @@ export function Projects() {
             </p>
           </div>
           <Link 
-            href="https://github.com/kevingeorge" 
+            href="https://github.com/KevinGeorge100" 
             target="_blank" 
             className="clay px-6 py-3 text-primary font-bold hover:clay-primary hover:scale-105 transition-all flex items-center mt-8 md:mt-0 border-white/10"
           >

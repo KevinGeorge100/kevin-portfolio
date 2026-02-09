@@ -78,7 +78,7 @@ export function Contact() {
                 <div>
                   <h4 className="font-extrabold text-lg">Socials</h4>
                   <div className="flex gap-4 mt-2">
-                    <Link href="https://github.com/kevingeorge" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="https://github.com/KevinGeorge100" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
                       <Github className="h-6 w-6" />
                     </Link>
                     <Link href="https://www.linkedin.com/in/kwingeorge/" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
