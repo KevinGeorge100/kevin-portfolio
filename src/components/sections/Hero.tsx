@@ -14,13 +14,13 @@ export function Hero() {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 text-center md:text-left reveal-on-scroll">
             <h2 className="text-accent font-semibold tracking-wider uppercase mb-4 text-sm md:text-base">
-              Cloud & DevOps Enthusiast
+              Cloud & Infrastructure
             </h2>
             <h1 className="text-4xl md:text-6xl font-headline font-extrabold text-foreground leading-tight mb-6">
-              I'm <span className="text-primary">Kevin George</span>, a Tech Volunteer.
+              I'm <span className="text-primary">Kevin George</span>, a <span className="text-primary">DevOps Engineer</span>.
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto md:mx-0">
-              CS Undergraduate student passionate about automating infrastructure, streamlining deployments, and contributing to the tech community through volunteering.
+              CS Undergraduate student passionate about automating infrastructure, streamlining deployments, and building robust cloud-native systems.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 rounded-full px-8">

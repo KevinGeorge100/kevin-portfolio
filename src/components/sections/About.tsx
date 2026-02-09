@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { User, Server, Globe, Users } from "lucide-react";
+import { User, Server, Globe, ShieldCheck } from "lucide-react";
 
 export function About() {
   return (
@@ -10,7 +10,7 @@ export function About() {
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground mb-4">About Me</h2>
           <div className="h-1.5 w-20 bg-accent mx-auto rounded-full mb-8"></div>
           <p className="text-lg text-muted-foreground">
-            I'm a Computer Science undergraduate based in Kerala, India. My journey in tech is driven by a fascination with how large-scale systems operate and a deep commitment to giving back to the community through technical volunteering.
+            I'm a Computer Science undergraduate based in Kerala, India. My journey in tech is driven by a fascination with how large-scale systems operate and a commitment to engineering excellence through automation and cloud-native practices.
           </p>
         </div>
 
@@ -32,9 +32,9 @@ export function About() {
               <div className="mb-4 inline-flex p-3 rounded-2xl bg-primary/10 text-primary">
                 <Server className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Cloud & DevOps</h3>
+              <h3 className="text-xl font-bold mb-2">Cloud Infrastructure</h3>
               <p className="text-sm text-muted-foreground">
-                Passionate about AWS, Docker, Kubernetes, and automating the software delivery lifecycle.
+                Passionate about AWS, Docker, Kubernetes, and managing scalable infrastructure.
               </p>
             </CardContent>
           </Card>
@@ -42,11 +42,11 @@ export function About() {
           <Card className="border-none shadow-md hover:shadow-lg transition-shadow reveal-on-scroll delay-200">
             <CardContent className="pt-8 text-center">
               <div className="mb-4 inline-flex p-3 rounded-2xl bg-primary/10 text-primary">
-                <Users className="h-6 w-6" />
+                <ShieldCheck className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Tech Volunteer</h3>
+              <h3 className="text-xl font-bold mb-2">DevOps Engineer</h3>
               <p className="text-sm text-muted-foreground">
-                Active member of local tech communities, helping organize workshops and mentoring peers.
+                Expertise in automating the software delivery lifecycle through CI/CD and monitoring.
               </p>
             </CardContent>
           </Card>
@@ -58,7 +58,7 @@ export function About() {
               </div>
               <h3 className="text-xl font-bold mb-2">Location</h3>
               <p className="text-sm text-muted-foreground">
-                Proudly based in Kerala, India, collaborating globally with open-source enthusiasts.
+                Proudly based in Kerala, India, collaborating globally on open-source and cloud projects.
               </p>
             </CardContent>
           </Card>
