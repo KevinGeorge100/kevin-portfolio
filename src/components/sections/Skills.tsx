@@ -1,4 +1,3 @@
-
 import { CheckCircle2, Cloud, Terminal, Code } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 
@@ -27,10 +26,10 @@ const softSkills = ["Leadership", "Collaboration", "Problem Solving", "Adaptabil
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 relative overflow-hidden">
+    <section id="skills" className="py-24 relative overflow-hidden bg-background">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-20 reveal-on-scroll">
-          <div className="inline-block px-4 py-1.5 clay mb-4 text-xs font-bold text-primary uppercase tracking-widest">
+          <div className="inline-block px-4 py-1.5 clay mb-4 text-xs font-bold text-primary uppercase tracking-widest border-white/10">
             My Stack
           </div>
           <h2 className="text-4xl md:text-5xl font-headline font-bold text-foreground mb-6">Technical Prowess</h2>
@@ -46,8 +45,8 @@ export function Skills() {
               className="reveal-on-scroll" 
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className={`clay p-10 h-full hover:scale-[1.02] transition-all duration-300`}>
-                <div className={`mb-8 inline-flex p-4 ${category.variant === 'clay-primary' ? 'clay-primary' : category.variant === 'clay-accent' ? 'clay-accent' : 'clay text-primary'}`}>
+              <div className={`clay p-10 h-full hover:scale-[1.02] transition-all duration-300 border-white/10 bg-white/5`}>
+                <div className={`mb-8 inline-flex p-4 rounded-3xl ${category.variant === 'clay-primary' ? 'clay-primary' : category.variant === 'clay-accent' ? 'clay-accent' : 'clay text-primary border-white/10'}`}>
                   {category.icon}
                 </div>
                 <h3 className="text-2xl font-extrabold mb-8">{category.title}</h3>
@@ -65,8 +64,8 @@ export function Skills() {
         </div>
 
         <div className="reveal-on-scroll">
-          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.1)">
-            <div className="clay-primary p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
+          <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.05)">
+            <div className="clay-primary p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 border-none">
               <div className="max-w-md text-center md:text-left">
                 <h3 className="text-3xl font-extrabold mb-4">Community Engagement</h3>
                 <p className="text-primary-foreground/90 text-lg leading-relaxed">
@@ -75,7 +74,7 @@ export function Skills() {
               </div>
               <div className="flex flex-wrap gap-4 justify-center md:justify-end">
                 {softSkills.map(skill => (
-                  <span key={skill} className="px-6 py-3 clay bg-white/20 border-white/30 text-white font-bold text-sm backdrop-blur-md hover:scale-110 transition-transform">
+                  <span key={skill} className="px-6 py-3 clay bg-white/10 border-white/20 text-white font-bold text-sm backdrop-blur-md hover:scale-110 transition-transform">
                     {skill}
                   </span>
                 ))}
@@ -86,7 +85,7 @@ export function Skills() {
       </div>
       
       {/* Background shape */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] bg-primary/2 rounded-full blur-[120px] -z-0"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] bg-accent/5 rounded-full blur-[150px] -z-0"></div>
     </section>
   );
 }

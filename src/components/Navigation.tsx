@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -38,12 +37,12 @@ export function Navigation() {
         className={cn(
           "container mx-auto px-6 h-20 flex items-center justify-between transition-all duration-500",
           scrolled 
-            ? "clay bg-white/80 scale-95 shadow-xl" 
+            ? "clay bg-black/40 scale-95 shadow-2xl border-white/10" 
             : "bg-transparent border-transparent"
         )}
       >
-        <Link href="#home" className="text-2xl font-headline font-black text-primary hover:scale-105 transition-transform">
-          Kevin<span className="text-accent">.</span>G
+        <Link href="#home" className="text-2xl font-headline font-black text-primary hover:scale-105 transition-transform tracking-tighter">
+          KEVIN<span className="text-accent">.</span>G
         </Link>
 
         {/* Desktop Navigation */}
@@ -52,10 +51,10 @@ export function Navigation() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-black text-muted-foreground hover:text-primary transition-all relative group"
+              className="text-xs uppercase tracking-widest font-black text-muted-foreground hover:text-primary transition-all relative group"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-accent rounded-full transition-all group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent rounded-full transition-all group-hover:w-full"></span>
             </Link>
           ))}
           <Button asChild className="clay-primary px-8 h-12 text-sm font-bold hover:scale-105 transition-transform">
@@ -65,7 +64,7 @@ export function Navigation() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-3 clay text-primary"
+          className="md:hidden p-3 clay text-primary border-white/10"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -76,7 +75,7 @@ export function Navigation() {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "md:hidden absolute top-24 left-4 right-4 clay p-6 transition-all duration-500 ease-in-out overflow-hidden",
+          "md:hidden absolute top-24 left-4 right-4 clay p-6 transition-all duration-500 ease-in-out overflow-hidden border-white/10 bg-black/80",
           isOpen ? "max-h-[500px] opacity-100 shadow-2xl" : "max-h-0 opacity-0 pointer-events-none"
         )}
       >

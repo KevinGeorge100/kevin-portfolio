@@ -1,29 +1,28 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 231 48% 48%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 14 100% 63%;
+    --background: 230 50% 2%;
+    --foreground: 210 40% 98%;
+    --card: 230 50% 5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 230 50% 5%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 100% 66%;
+    --primary-foreground: 230 50% 2%;
+    --secondary: 230 30% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 230 20% 15%;
+    --muted-foreground: 215 20% 70%;
+    --accent: 280 80% 60%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 231 48% 48%;
+    --border: 230 30% 15%;
+    --input: 230 30% 15%;
+    --ring: 210 100% 66%;
     --radius: 1.5rem;
   }
 }
@@ -39,17 +38,17 @@
 
 @layer utilities {
   .clay {
-    @apply bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2.5rem];
+    @apply bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2.5rem];
     box-shadow: 
-      12px 12px 24px rgba(0, 0, 0, 0.04),
-      inset 8px 8px 16px rgba(255, 255, 255, 0.8),
-      inset -8px -8px 16px rgba(0, 0, 0, 0.01);
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      inset 1px 1px 2px rgba(255, 255, 255, 0.1),
+      inset -1px -1px 2px rgba(0, 0, 0, 0.2);
   }
 
   .clay-primary {
     @apply bg-primary text-primary-foreground border-white/20 rounded-[2.5rem];
     box-shadow: 
-      12px 12px 24px rgba(67, 78, 178, 0.2),
+      12px 12px 24px rgba(0, 150, 255, 0.2),
       inset 6px 6px 12px rgba(255, 255, 255, 0.25),
       inset -6px -6px 12px rgba(0, 0, 0, 0.15);
   }
@@ -57,7 +56,7 @@
   .clay-accent {
     @apply bg-accent text-accent-foreground border-white/20 rounded-[2.5rem];
     box-shadow: 
-      12px 12px 24px rgba(255, 99, 71, 0.2),
+      12px 12px 24px rgba(160, 32, 240, 0.2),
       inset 6px 6px 12px rgba(255, 255, 255, 0.25),
       inset -6px -6px 12px rgba(0, 0, 0, 0.15);
   }
@@ -82,4 +81,13 @@
 
 .animate-aurora {
   animation: aurora 20s ease infinite;
+}
+
+@keyframes blur-in {
+  0% { filter: blur(12px); opacity: 0; transform: translateY(10px); }
+  100% { filter: blur(0); opacity: 1; transform: translateY(0); }
+}
+
+.animate-blur-in {
+  animation: blur-in 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
