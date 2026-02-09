@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "project-1",
+      "description": "A modern e-commerce dashboard showing sales analytics and user growth.",
+      "imageUrl": "https://images.unsplash.com/photo-1759661966728-4a02e3c6ed91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkYXNoYm9hcmQlMjBhbmFseXRpY3N8ZW58MHx8fHwxNzcwNjIxOTk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dashboard analytics"
+    },
+    {
+      "id": "project-2",
+      "description": "A sleek mobile application interface for a fitness tracking startup.",
+      "imageUrl": "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzcwNTY1ODc4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mobile app"
+    },
+    {
+      "id": "project-3",
+      "description": "An interactive map visualization for global environmental data.",
+      "imageUrl": "https://images.unsplash.com/photo-1584291527935-456e8e2dd734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYXAlMjB2aXN1YWxpemF0aW9ufGVufDB8fHx8MTc3MDYyMTk5NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "map visualization"
+    },
+    {
+      "id": "hero-portrait",
+      "description": "Professional portrait of a developer in a modern workspace.",
+      "imageUrl": "https://images.unsplash.com/photo-1737575655055-e3967cbefd03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwcm9mZXNzaW9uYWwlMjBkZXZlbG9wZXJ8ZW58MHx8fHwxNzcwNTYwMTkxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional developer"
+    }
+  ]
 }
