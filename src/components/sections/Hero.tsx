@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -8,13 +9,38 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Magnetic } from "@/components/ui/magnetic";
 import { BlurText } from "@/components/ui/blur-text";
+import LiquidEther from "@/components/ui/liquid-ether";
 
 export function Hero() {
   const portrait = PlaceHolderImages.find(img => img.id === "hero-portrait");
 
   return (
-    <AuroraBackground className="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden min-h-screen">
-      <div className="container mx-auto px-4 md:px-6">
+    <AuroraBackground className="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden min-h-screen relative">
+      {/* Liquid Ether Layer */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <LiquidEther
+          colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]}
+          mouseForce={20}
+          cursorSize={150}
+          isViscous
+          viscous={30}
+          iterationsViscous={32}
+          iterationsPoisson={32}
+          resolution={0.5}
+          isBounce={false}
+          autoDemo
+          autoSpeed={0.5}
+          autoIntensity={2.2}
+          takeoverDuration={0.25}
+          autoResumeDelay={3000}
+          autoRampDuration={0.6}
+          color0="#5227FF"
+          color1="#FF9FFC"
+          color2="#B19EEF"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 text-center md:text-left reveal-on-scroll">
             <div className="inline-block px-4 py-1.5 clay mb-6 text-sm font-bold text-accent uppercase tracking-widest animate-blur-in opacity-0">
