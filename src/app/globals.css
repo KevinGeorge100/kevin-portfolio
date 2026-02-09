@@ -32,7 +32,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground scroll-smooth antialiased;
+    @apply bg-background text-foreground scroll-smooth antialiased selection:bg-primary selection:text-primary-foreground;
     text-rendering: optimizeLegibility;
   }
 }
@@ -41,35 +41,35 @@
   .clay {
     @apply bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2.5rem];
     box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.4),
-      inset 1px 1px 2px rgba(255, 255, 255, 0.1),
-      inset -1px -1px 2px rgba(0, 0, 0, 0.2);
+      0 12px 40px rgba(0, 0, 0, 0.5),
+      inset 1px 1px 2px rgba(255, 255, 255, 0.15),
+      inset -1px -1px 2px rgba(0, 0, 0, 0.25);
     will-change: transform, box-shadow;
   }
 
   .clay-primary {
     @apply bg-primary text-primary-foreground border-white/20 rounded-[2.5rem];
     box-shadow: 
-      12px 12px 24px rgba(0, 150, 255, 0.2),
-      inset 6px 6px 12px rgba(255, 255, 255, 0.25),
-      inset -6px -6px 12px rgba(0, 0, 0, 0.15);
+      12px 12px 30px rgba(0, 150, 255, 0.25),
+      inset 6px 6px 15px rgba(255, 255, 255, 0.3),
+      inset -6px -6px 15px rgba(0, 0, 0, 0.2);
     will-change: transform, scale;
   }
 
   .clay-accent {
     @apply bg-accent text-accent-foreground border-white/20 rounded-[2.5rem];
     box-shadow: 
-      12px 12px 24px rgba(160, 32, 240, 0.2),
-      inset 6px 6px 12px rgba(255, 255, 255, 0.25),
-      inset -6px -6px 12px rgba(0, 0, 0, 0.15);
+      12px 12px 30px rgba(160, 32, 240, 0.25),
+      inset 6px 6px 15px rgba(255, 255, 255, 0.3),
+      inset -6px -6px 15px rgba(0, 0, 0, 0.2);
     will-change: transform, scale;
   }
 }
 
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1), transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
   will-change: opacity, transform;
 }
 
@@ -90,10 +90,10 @@
 }
 
 @keyframes blur-in {
-  0% { filter: blur(8px); opacity: 0; transform: translateY(8px); }
+  0% { filter: blur(12px); opacity: 0; transform: translateY(10px); }
   100% { filter: blur(0); opacity: 1; transform: translateY(0); }
 }
 
 .animate-blur-in {
-  animation: blur-in 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: blur-in 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
