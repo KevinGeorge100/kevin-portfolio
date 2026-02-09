@@ -36,20 +36,20 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-4 items-center">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
           
-          {/* Left Content */}
-          <div className="flex flex-col space-y-8">
+          {/* Left Content - Pulled closer to center */}
+          <div className="flex flex-col space-y-8 text-center lg:text-left lg:max-w-xl">
             <div className="space-y-2">
               <span className="text-primary text-xl font-black uppercase tracking-widest block mb-2">Hello, I&apos;m</span>
-              <h1 className="text-7xl md:text-9xl font-black tracking-tighter leading-[0.9]">
+              <h1 className="text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9]">
                 <span className="text-white block">Kevin</span>
                 <span className="text-white block">George</span>
               </h1>
               <span className="text-accent text-3xl md:text-5xl font-black tracking-tight block mt-4">DevOps Engineer</span>
             </div>
 
-            <div className="max-w-md">
+            <div className="max-w-md mx-auto lg:mx-0">
               <BlurText 
                 text="I specialize in cloud automation, infrastructure as code, and building highly resilient site reliability frameworks."
                 className="text-lg md:text-xl text-white/60 leading-relaxed font-medium"
@@ -57,7 +57,7 @@ export function Hero() {
               />
             </div>
 
-            <button className="group relative w-fit h-16 px-8 rounded-full bg-primary text-black font-bold text-lg flex items-center gap-4 hover:scale-105 transition-all">
+            <button className="group relative w-fit h-16 px-8 rounded-full bg-primary text-black font-bold text-lg flex items-center gap-4 hover:scale-105 transition-all mx-auto lg:mx-0">
               <div className="flex items-center gap-1">
                 <MoveRight className="w-5 h-5" />
                 <MoveRight className="w-5 h-5 opacity-60" />
@@ -67,8 +67,8 @@ export function Hero() {
             </button>
           </div>
 
-          {/* Right Content - The Portrait (More Compact Size) */}
-          <div className="relative aspect-[4/5] w-full max-w-[320px] mx-auto lg:ml-0">
+          {/* Right Content - The Portrait (Compact Size) */}
+          <div className="relative aspect-[4/5] w-full max-w-[300px] flex-shrink-0">
             {/* The Big Lime Checkmark Behind Portrait */}
             <div className="absolute -inset-10 -z-10 pointer-events-none">
               <svg viewBox="0 0 500 500" className="w-full h-full text-primary fill-current opacity-90 rotate-[-10deg]">
