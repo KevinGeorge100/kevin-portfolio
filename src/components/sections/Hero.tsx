@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -8,6 +7,7 @@ import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Magnetic } from "@/components/ui/magnetic";
+import { BlurText } from "@/components/ui/blur-text";
 
 export function Hero() {
   const portrait = PlaceHolderImages.find(img => img.id === "hero-portrait");
@@ -17,16 +17,22 @@ export function Hero() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 text-center md:text-left reveal-on-scroll">
-            <div className="inline-block px-4 py-1.5 clay mb-6 text-sm font-bold text-accent uppercase tracking-widest">
+            <div className="inline-block px-4 py-1.5 clay mb-6 text-sm font-bold text-accent uppercase tracking-widest animate-blur-in opacity-0">
               Cloud & Infrastructure
             </div>
-            <h1 className="text-4xl md:text-7xl font-headline font-extrabold text-foreground leading-tight mb-6">
-              I'm <span className="text-primary">Kevin George</span>, a <span className="text-primary">DevOps Engineer</span>.
+            
+            <h1 className="text-4xl md:text-7xl font-headline font-extrabold text-foreground leading-tight mb-6 flex flex-wrap justify-center md:justify-start">
+              <BlurText text="I'm" baseDelay={0.2} />
+              <BlurText text="Kevin George," className="text-primary ml-2" baseDelay={0.4} />
+              <BlurText text="a" className="ml-2" baseDelay={0.8} />
+              <BlurText text="DevOps Engineer." className="text-primary ml-2" baseDelay={1.0} />
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto md:mx-0">
+
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto md:mx-0 reveal-on-scroll delay-700">
               CS Undergraduate student passionate about automating infrastructure, streamlining deployments, and building robust cloud-native systems.
             </p>
-            <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start">
+            
+            <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start reveal-on-scroll delay-1000">
               <Magnetic strength={0.2}>
                 <Button asChild size="lg" className="clay-primary h-14 px-10 text-lg hover:scale-105 transition-transform">
                   <Link href="#projects">
@@ -53,7 +59,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-          <div className="flex-1 relative reveal-on-scroll delay-200">
+          <div className="flex-1 relative reveal-on-scroll delay-500">
             <div className="relative w-72 h-72 md:w-[28rem] md:h-[28rem] mx-auto">
               <div className="absolute inset-0 bg-primary/10 rounded-[3rem] rotate-6 scale-105 blur-2xl"></div>
               <div className="absolute inset-0 bg-accent/10 rounded-[3rem] -rotate-3 scale-105 blur-2xl"></div>

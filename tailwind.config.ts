@@ -96,11 +96,16 @@ export default {
             backgroundPosition: '350% 50%, 350% 50%',
           },
         },
+        'blur-in': {
+          '0%': { filter: 'blur(12px)', opacity: '0', transform: 'translateY(10px)' },
+          '100%': { filter: 'blur(0)', opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         aurora: 'aurora 60s linear infinite',
+        'blur-in': 'blur-in 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
       },
     },
   },
