@@ -10,12 +10,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   output: 'export',
-  // basePath must match your repository name exactly
   basePath: '/kevin-portfolio',
-  // assetPrefix ensures CSS/JS load from the correct subfolder
-  // Removed trailing slash for consistency
-  assetPrefix: '/kevin-portfolio',
-  trailingSlash: true,
   images: {
     unoptimized: true,
     remotePatterns: [

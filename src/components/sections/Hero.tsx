@@ -1,24 +1,17 @@
 
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { BlurText } from "@/components/ui/blur-text";
-import { MoveRight, Download, Activity } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { cn } from "@/lib/utils";
 
 export function Hero() {
   const portrait = PlaceHolderImages.find(img => img.id === "hero-portrait");
   
-  const handleResumeDownload = () => {
-    // Correctly handle the basePath for assets in static export
-    const basePath = '/kevin-portfolio';
-    window.open(`${basePath}/resume.pdf`, '_blank');
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-background">
       <AuroraBackground className="absolute inset-0 z-0 opacity-40 pointer-events-none">
@@ -39,12 +32,6 @@ export function Hero() {
           {/* Left Content */}
           <div className="flex flex-col space-y-8 text-center lg:text-left lg:max-w-xl">
             <div className="space-y-2">
-              <div className="flex items-center gap-3 justify-center lg:justify-start mb-4">
-                <div className="flex items-center gap-2 px-3 py-1 clay rounded-full border border-white/10">
-                  <Activity className="h-3 w-3 text-primary animate-pulse" />
-                  <span className="text-[10px] font-black uppercase tracking-widest text-white/70">Systems: Operational</span>
-                </div>
-              </div>
               <span className="text-primary text-lg font-black uppercase tracking-widest block">Hello, I&apos;m</span>
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9]">
                 <span className="text-white block">Kevin</span>
@@ -73,14 +60,6 @@ export function Hero() {
                 </div>
                 <span>Connect with Me</span>
               </Link>
-
-              <button 
-                onClick={handleResumeDownload}
-                className="group h-14 px-8 rounded-full clay border border-white/10 text-white font-bold text-base flex items-center gap-3 hover:bg-white/10 transition-all"
-              >
-                <Download className="w-4 h-4 text-accent group-hover:animate-bounce" />
-                <span>Download CV</span>
-              </button>
             </div>
           </div>
 
