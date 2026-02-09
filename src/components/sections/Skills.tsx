@@ -1,49 +1,58 @@
 
-import { CheckCircle2, Cloud, Terminal, Shield, Users, Code } from "lucide-react";
+import { CheckCircle2, Cloud, Terminal, Code } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Cloud & Infrastructure",
-    icon: <Cloud className="h-6 w-6" />,
-    skills: ["AWS Essentials", "Docker Containers", "Kubernetes Basics", "Terraform (IaC)", "Nginx Configuration"]
+    title: "Infrastructure",
+    icon: <Cloud className="h-7 w-7" />,
+    skills: ["AWS Essentials", "Docker Containers", "Kubernetes Basics", "Terraform (IaC)", "Nginx Config"],
+    variant: "clay-primary"
   },
   {
-    title: "DevOps & Tools",
-    icon: <Terminal className="h-6 w-6" />,
-    skills: ["Linux SysAdmin", "Git & GitHub Actions", "CI/CD Pipelines", "Shell Scripting", "Prometheus/Grafana"]
+    title: "DevOps Tools",
+    icon: <Terminal className="h-7 w-7" />,
+    skills: ["Linux SysAdmin", "Git & CI/CD", "Shell Scripting", "GitHub Actions", "Monitoring"],
+    variant: "clay"
   },
   {
-    title: "Development & Community",
-    icon: <Code className="h-6 w-6" />,
-    skills: ["Python", "JavaScript/React", "Technical Writing", "Event Organizing", "Public Speaking"]
+    title: "Community",
+    icon: <Code className="h-7 w-7" />,
+    skills: ["Python", "JS / React", "Technical Writing", "Event Organizing", "Public Speaking"],
+    variant: "clay-accent"
   }
 ];
 
-const softSkills = ["Community Leadership", "Team Collaboration", "Problem Solving", "Adaptability", "Mentorship"];
+const softSkills = ["Leadership", "Collaboration", "Problem Solving", "Adaptability", "Mentorship"];
 
 export function Skills() {
   return (
-    <section id="skills" className="py-20 bg-secondary/50">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16 reveal-on-scroll">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground mb-4">Technical Prowess</h2>
-          <div className="h-1.5 w-20 bg-accent mx-auto rounded-full mb-8"></div>
-          <p className="text-lg text-muted-foreground">
+    <section id="skills" className="py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="max-w-3xl mx-auto text-center mb-20 reveal-on-scroll">
+          <div className="inline-block px-4 py-1.5 clay mb-4 text-xs font-bold text-primary uppercase tracking-widest">
+            My Stack
+          </div>
+          <h2 className="text-4xl md:text-5xl font-headline font-bold text-foreground mb-6">Technical Prowess</h2>
+          <p className="text-xl text-muted-foreground">
             A growing toolkit focused on modern infrastructure, automation, and community building.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
           {skillCategories.map((category, index) => (
-            <div key={category.title} className="bg-card p-8 rounded-3xl shadow-sm reveal-on-scroll" style={{ transitionDelay: `${index * 150}ms` }}>
-              <div className="mb-6 inline-flex p-3 rounded-2xl bg-primary/10 text-primary">
+            <div 
+              key={category.title} 
+              className={`clay p-10 hover:scale-105 transition-all duration-300 reveal-on-scroll`} 
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
+              <div className={`mb-8 inline-flex p-4 ${category.variant === 'clay-primary' ? 'clay-primary' : category.variant === 'clay-accent' ? 'clay-accent' : 'clay text-primary'}`}>
                 {category.icon}
               </div>
-              <h3 className="text-xl font-bold mb-6">{category.title}</h3>
-              <ul className="space-y-4">
+              <h3 className="text-2xl font-extrabold mb-8">{category.title}</h3>
+              <ul className="space-y-5">
                 {category.skills.map(skill => (
-                  <li key={skill} className="flex items-center text-muted-foreground">
-                    <CheckCircle2 className="h-4 w-4 text-accent mr-3" />
+                  <li key={skill} className="flex items-center text-muted-foreground font-medium">
+                    <CheckCircle2 className="h-5 w-5 text-accent mr-4 flex-shrink-0" />
                     {skill}
                   </li>
                 ))}
@@ -53,16 +62,16 @@ export function Skills() {
         </div>
 
         <div className="reveal-on-scroll">
-          <div className="bg-primary p-8 md:p-12 rounded-3xl text-primary-foreground flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="max-w-md">
-              <h3 className="text-2xl font-bold mb-2">Community Engagement</h3>
-              <p className="text-primary-foreground/80">
+          <div className="clay-primary p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="max-w-md text-center md:text-left">
+              <h3 className="text-3xl font-extrabold mb-4">Community Engagement</h3>
+              <p className="text-primary-foreground/90 text-lg leading-relaxed">
                 Beyond technical skills, I am deeply involved in fostering inclusive and knowledge-sharing environments.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3 justify-center md:justify-end">
+            <div className="flex flex-wrap gap-4 justify-center md:justify-end">
               {softSkills.map(skill => (
-                <span key={skill} className="px-4 py-2 bg-white/10 rounded-full text-sm border border-white/20 backdrop-blur-sm">
+                <span key={skill} className="px-6 py-3 clay bg-white/20 border-white/30 text-white font-bold text-sm backdrop-blur-md hover:scale-110 transition-transform">
                   {skill}
                 </span>
               ))}
@@ -70,6 +79,9 @@ export function Skills() {
           </div>
         </div>
       </div>
+      
+      {/* Background shape */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] bg-primary/2 rounded-full blur-[120px] -z-0"></div>
     </section>
   );
 }

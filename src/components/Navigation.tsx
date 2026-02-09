@@ -30,36 +30,42 @@ export function Navigation() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-        scrolled
-          ? "bg-background/80 backdrop-blur-md py-2 shadow-sm border-border"
-          : "bg-transparent py-4 border-transparent"
+        "fixed top-4 left-0 right-0 z-50 transition-all duration-500",
+        scrolled ? "px-4 md:px-10" : "px-4 md:px-6"
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="#home" className="text-xl font-headline font-bold text-primary">
-          Persona<span className="text-accent">Site</span>
+      <div 
+        className={cn(
+          "container mx-auto px-6 h-20 flex items-center justify-between transition-all duration-500",
+          scrolled 
+            ? "clay bg-white/80 scale-95 shadow-xl" 
+            : "bg-transparent border-transparent"
+        )}
+      >
+        <Link href="#home" className="text-2xl font-headline font-black text-primary hover:scale-105 transition-transform">
+          Kevin<span className="text-accent">.</span>G
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-10">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-black text-muted-foreground hover:text-primary transition-all relative group"
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-accent rounded-full transition-all group-hover:w-full"></span>
             </Link>
           ))}
-          <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button asChild className="clay-primary px-8 h-12 text-sm font-bold hover:scale-105 transition-transform">
             <Link href="#contact">Hire Me</Link>
           </Button>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-3 clay text-primary"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -70,22 +76,22 @@ export function Navigation() {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "md:hidden absolute top-full left-0 w-full bg-background border-b transition-all duration-300 ease-in-out overflow-hidden",
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          "md:hidden absolute top-24 left-4 right-4 clay p-6 transition-all duration-500 ease-in-out overflow-hidden",
+          isOpen ? "max-h-[500px] opacity-100 shadow-2xl" : "max-h-0 opacity-0 pointer-events-none"
         )}
       >
-        <div className="flex flex-col p-4 space-y-4">
+        <div className="flex flex-col space-y-6">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-lg font-medium hover:text-primary"
+              className="text-xl font-bold text-foreground hover:text-primary"
               onClick={() => setIsOpen(false)}
             >
               {link.name}
             </Link>
           ))}
-          <Button asChild className="w-full">
+          <Button asChild className="w-full clay-primary h-14 text-lg">
             <Link href="#contact" onClick={() => setIsOpen(false)}>Hire Me</Link>
           </Button>
         </div>
