@@ -3,8 +3,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Persona Site | Alex Rivera - Digital Architect',
-  description: 'Personal portfolio of Alex Rivera, a professional digital architect and full-stack developer.',
+  title: 'Kevin George | Cloud & DevOps Enthusiast',
+  description: 'Portfolio of Kevin George, a Cloud & DevOps enthusiast, tech volunteer, and CS undergraduate based in Kerala, India.',
 };
 
 export default function RootLayout({

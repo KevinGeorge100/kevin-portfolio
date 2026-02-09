@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { User, Code2, Rocket, Heart } from "lucide-react";
+import { User, Server, Globe, Users } from "lucide-react";
 
 export function About() {
   return (
@@ -10,7 +10,7 @@ export function About() {
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground mb-4">About Me</h2>
           <div className="h-1.5 w-20 bg-accent mx-auto rounded-full mb-8"></div>
           <p className="text-lg text-muted-foreground">
-            I'm a full-stack developer with a passion for building clean, performant, and accessible user interfaces. With over 5 years of experience, I bridge the gap between complex backend systems and intuitive frontend experiences.
+            I'm a Computer Science undergraduate based in Kerala, India. My journey in tech is driven by a fascination with how large-scale systems operate and a deep commitment to giving back to the community through technical volunteering.
           </p>
         </div>
 
@@ -20,9 +20,9 @@ export function About() {
               <div className="mb-4 inline-flex p-3 rounded-2xl bg-primary/10 text-primary">
                 <User className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Who I Am</h3>
+              <h3 className="text-xl font-bold mb-2">CS Undergraduate</h3>
               <p className="text-sm text-muted-foreground">
-                A problem-solver at heart, I enjoy untangling complex requirements into simple solutions.
+                Currently pursuing my degree, focusing on core computing principles and emerging technologies.
               </p>
             </CardContent>
           </Card>
@@ -30,11 +30,11 @@ export function About() {
           <Card className="border-none shadow-md hover:shadow-lg transition-shadow reveal-on-scroll delay-100">
             <CardContent className="pt-8 text-center">
               <div className="mb-4 inline-flex p-3 rounded-2xl bg-primary/10 text-primary">
-                <Code2 className="h-6 w-6" />
+                <Server className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-bold mb-2">What I Do</h3>
+              <h3 className="text-xl font-bold mb-2">Cloud & DevOps</h3>
               <p className="text-sm text-muted-foreground">
-                I build robust web applications using React, Next.js, and modern cloud infrastructures.
+                Passionate about AWS, Docker, Kubernetes, and automating the software delivery lifecycle.
               </p>
             </CardContent>
           </Card>
@@ -42,11 +42,11 @@ export function About() {
           <Card className="border-none shadow-md hover:shadow-lg transition-shadow reveal-on-scroll delay-200">
             <CardContent className="pt-8 text-center">
               <div className="mb-4 inline-flex p-3 rounded-2xl bg-primary/10 text-primary">
-                <Rocket className="h-6 w-6" />
+                <Users className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Experience</h3>
+              <h3 className="text-xl font-bold mb-2">Tech Volunteer</h3>
               <p className="text-sm text-muted-foreground">
-                Collaborated with Fortune 500 companies and agile startups to launch high-traffic products.
+                Active member of local tech communities, helping organize workshops and mentoring peers.
               </p>
             </CardContent>
           </Card>
@@ -54,11 +54,11 @@ export function About() {
           <Card className="border-none shadow-md hover:shadow-lg transition-shadow reveal-on-scroll delay-300">
             <CardContent className="pt-8 text-center">
               <div className="mb-4 inline-flex p-3 rounded-2xl bg-primary/10 text-primary">
-                <Heart className="h-6 w-6" />
+                <Globe className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Values</h3>
+              <h3 className="text-xl font-bold mb-2">Location</h3>
               <p className="text-sm text-muted-foreground">
-                Commitment to quality, open communication, and constant learning are my cornerstones.
+                Proudly based in Kerala, India, collaborating globally with open-source enthusiasts.
               </p>
             </CardContent>
           </Card>

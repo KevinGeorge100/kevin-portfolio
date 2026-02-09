@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MessageSquare, Phone, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, MessageCircle } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -32,7 +32,7 @@ export function Contact() {
     console.log(values);
     toast({
       title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      description: "Thanks for reaching out, Kevin will get back to you soon!",
     });
     form.reset();
   }
@@ -42,10 +42,10 @@ export function Contact() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div className="reveal-on-scroll">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground mb-4">Get in Touch</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground mb-4">Let's Connect</h2>
             <div className="h-1.5 w-20 bg-accent rounded-full mb-8"></div>
             <p className="text-lg text-muted-foreground mb-8">
-              Have a project in mind or just want to say hello? I'm always open to discussing new opportunities and creative ideas.
+              Whether you want to discuss Cloud infrastructure, collaborate on a community event, or just talk tech, feel free to drop a message!
             </p>
 
             <div className="space-y-6">
@@ -55,17 +55,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold">Email Me</h4>
-                  <p className="text-muted-foreground">hello@alexrivera.dev</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-primary/5 text-primary">
-                  <Phone className="h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold">Call Me</h4>
-                  <p className="text-muted-foreground">+1 (555) 000-0000</p>
+                  <p className="text-muted-foreground">kevin.george@example.com</p>
                 </div>
               </div>
 
@@ -75,7 +65,17 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold">Based In</h4>
-                  <p className="text-muted-foreground">San Francisco, CA (Open to Remote)</p>
+                  <p className="text-muted-foreground">Kerala, India</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-xl bg-primary/5 text-primary">
+                  <MessageCircle className="h-6 w-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold">Socials</h4>
+                  <p className="text-muted-foreground">Connect on LinkedIn or Twitter</p>
                 </div>
               </div>
             </div>
@@ -89,9 +89,9 @@ export function Contact() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Full Name</FormLabel>
+                      <FormLabel>Your Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} className="bg-background border-none h-12" />
+                        <Input placeholder="Kevin George" {...field} className="bg-background border-none h-12" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -104,7 +104,7 @@ export function Contact() {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input placeholder="john@example.com" {...field} className="bg-background border-none h-12" />
+                        <Input placeholder="kevin@example.com" {...field} className="bg-background border-none h-12" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -115,10 +115,10 @@ export function Contact() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Your Message</FormLabel>
+                      <FormLabel>Message</FormLabel>
                       <FormControl>
                         <Textarea 
-                          placeholder="Tell me about your project..." 
+                          placeholder="What's on your mind?" 
                           {...field} 
                           className="bg-background border-none min-h-[150px] resize-none" 
                         />

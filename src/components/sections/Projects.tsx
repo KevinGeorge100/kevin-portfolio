@@ -9,25 +9,25 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 const projects = [
   {
     id: "project-1",
-    title: "EcoTrack Analytics",
-    description: "A comprehensive dashboard for monitoring environmental metrics across global data points.",
-    tags: ["Next.js", "D3.js", "TypeScript", "Tailwind"],
+    title: "Cloud-Native Task Manager",
+    description: "A containerized microservices application demonstrating orchestration with Kubernetes.",
+    tags: ["Docker", "Kubernetes", "Node.js", "Redis"],
     link: "#",
     repo: "#"
   },
   {
     id: "project-2",
-    title: "FitPulse Mobile",
-    description: "End-to-end mobile application for personal fitness tracking with real-time biometric sync.",
-    tags: ["React Native", "Firebase", "HealthKit"],
+    title: "Automated CI/CD Pipeline",
+    description: "Multi-stage pipeline setup for automated testing, building, and deploying static sites.",
+    tags: ["GitHub Actions", "Terraform", "AWS S3"],
     link: "#",
     repo: "#"
   },
   {
     id: "project-3",
-    title: "Nexus E-Commerce",
-    description: "High-performance headless commerce platform with custom checkout and inventory management.",
-    tags: ["React", "Node.js", "GraphQL", "Postgres"],
+    title: "Tech Community Portal",
+    description: "Volunteer-led platform for organizing local tech meetups and resource sharing.",
+    tags: ["Next.js", "Firebase", "Tailwind CSS"],
     link: "#",
     repo: "#"
   }
@@ -39,14 +39,14 @@ export function Projects() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 reveal-on-scroll">
           <div>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground mb-4">Featured Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground mb-4">Featured Work</h2>
             <p className="text-muted-foreground max-w-lg">
-              A selection of my recent works where design meets functionality.
+              Showcasing my journey through cloud infrastructure, automation, and community projects.
             </p>
           </div>
           <div className="h-px bg-border flex-grow mx-8 hidden md:block mb-4"></div>
-          <Link href="#" className="text-primary font-medium hover:underline flex items-center mt-4 md:mt-0">
-            View All Work <ExternalLink className="ml-1 h-4 w-4" />
+          <Link href="https://github.com" className="text-primary font-medium hover:underline flex items-center mt-4 md:mt-0">
+            View GitHub <ExternalLink className="ml-1 h-4 w-4" />
           </Link>
         </div>
 
@@ -79,7 +79,7 @@ export function Projects() {
                 </CardContent>
                 <CardFooter className="gap-4 pt-0">
                   <Link href={project.link} className="inline-flex items-center text-sm font-medium text-primary hover:text-accent transition-colors">
-                    Live Demo <ExternalLink className="ml-1 h-4 w-4" />
+                    Demo <ExternalLink className="ml-1 h-4 w-4" />
                   </Link>
                   <Link href={project.repo} className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                     Code <Github className="ml-1 h-4 w-4" />

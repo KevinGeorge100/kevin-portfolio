@@ -1,25 +1,25 @@
 
-import { CheckCircle2, Layout, Database, Terminal, Settings, Globe } from "lucide-react";
+import { CheckCircle2, Cloud, Terminal, Shield, Users, Code } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Frontend Development",
-    icon: <Layout className="h-6 w-6" />,
-    skills: ["React / Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Three.js"]
+    title: "Cloud & Infrastructure",
+    icon: <Cloud className="h-6 w-6" />,
+    skills: ["AWS Essentials", "Docker Containers", "Kubernetes Basics", "Terraform (IaC)", "Nginx Configuration"]
   },
   {
-    title: "Backend & Devops",
+    title: "DevOps & Tools",
     icon: <Terminal className="h-6 w-6" />,
-    skills: ["Node.js / Express", "Python / FastAPI", "PostgreSQL / Prisma", "AWS / Docker", "Vercel / CI/CD"]
+    skills: ["Linux SysAdmin", "Git & GitHub Actions", "CI/CD Pipelines", "Shell Scripting", "Prometheus/Grafana"]
   },
   {
-    title: "Design & UX",
-    icon: <Settings className="h-6 w-6" />,
-    skills: ["UI/UX Design", "Figma", "Responsive Design", "Accessibility (a11y)", "Design Systems"]
+    title: "Development & Community",
+    icon: <Code className="h-6 w-6" />,
+    skills: ["Python", "JavaScript/React", "Technical Writing", "Event Organizing", "Public Speaking"]
   }
 ];
 
-const softSkills = ["Agile Methodology", "Public Speaking", "Team Leadership", "Problem Solving", "Technical Writing"];
+const softSkills = ["Community Leadership", "Team Collaboration", "Problem Solving", "Adaptability", "Mentorship"];
 
 export function Skills() {
   return (
@@ -29,7 +29,7 @@ export function Skills() {
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground mb-4">Technical Prowess</h2>
           <div className="h-1.5 w-20 bg-accent mx-auto rounded-full mb-8"></div>
           <p className="text-lg text-muted-foreground">
-            A diverse toolkit built on years of continuous learning and hands-on experience.
+            A growing toolkit focused on modern infrastructure, automation, and community building.
           </p>
         </div>
 
@@ -55,9 +55,9 @@ export function Skills() {
         <div className="reveal-on-scroll">
           <div className="bg-primary p-8 md:p-12 rounded-3xl text-primary-foreground flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-md">
-              <h3 className="text-2xl font-bold mb-2">Interdisciplinary Skills</h3>
+              <h3 className="text-2xl font-bold mb-2">Community Engagement</h3>
               <p className="text-primary-foreground/80">
-                Beyond code, I focus on the methodologies and soft skills that make projects successful.
+                Beyond technical skills, I am deeply involved in fostering inclusive and knowledge-sharing environments.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 justify-center md:justify-end">

@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="py-12 border-t border-border bg-background">
       <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Alex Rivera. All rights reserved.
+          © {new Date().getFullYear()} Kevin George. All rights reserved.
         </p>
         <div className="flex items-center space-x-8 text-sm text-muted-foreground">
           <Link href="#home" className="hover:text-primary">Home</Link>
