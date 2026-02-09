@@ -20,9 +20,9 @@
     },
     {
       "id": "hero-portrait",
-      "description": "Professional photo of a young computer science student.",
-      "imageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5b3VuZyUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3NzA2MjE5OTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "young professional"
+      "description": "Professional photo of Kevin George.",
+      "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQFgPLGtRnTcrA/profile-displayphoto-scale_200_200/B4EZq5TA4fIwAc-/0/1764045362808?e=1772064000&v=beta&t=g9uahnHM7WGd1xNg6y10Y99adowwM0I9vDlzZ3aqlwc",
+      "imageHint": "kevin george"
     }
   ]
 }
