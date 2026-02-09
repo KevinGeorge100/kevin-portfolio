@@ -9,34 +9,22 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Magnetic } from "@/components/ui/magnetic";
 import { BlurText } from "@/components/ui/blur-text";
-import LiquidEther from "@/components/ui/liquid-ether";
+import { Waves } from "@/components/ui/waves";
 
 export function Hero() {
   const portrait = PlaceHolderImages.find(img => img.id === "hero-portrait");
 
   return (
     <AuroraBackground className="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden min-h-screen relative">
-      {/* Liquid Ether Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <LiquidEther
-          colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]}
-          mouseForce={20}
-          cursorSize={150}
-          isViscous
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo
-          autoSpeed={0.5}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={3000}
-          autoRampDuration={0.6}
-          color0="#5227FF"
-          color1="#FF9FFC"
-          color2="#B19EEF"
+      {/* Waves Background Layer */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-60">
+        <Waves 
+          className="w-full h-full"
+          count={50}
+          waveAmpX={80}
+          waveAmpY={40}
+          waveSpeedX={0.008}
+          waveSpeedY={0.006}
         />
       </div>
 
