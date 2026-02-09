@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Navigation } from "@/components/Navigation";
@@ -9,6 +8,7 @@ import { Skills } from "@/components/sections/Skills";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
+import { AiAssistant } from "@/components/AiAssistant";
 import { useReveal } from "@/hooks/use-reveal";
 
 export default function Home() {
@@ -25,6 +25,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <AiAssistant />
       <Toaster />
     </div>
   );
