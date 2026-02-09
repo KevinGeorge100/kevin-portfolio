@@ -1,28 +1,28 @@
-import { CheckCircle2, Cloud, Terminal, Code } from "lucide-react";
+import { CheckCircle2, Cloud, Terminal, ShieldCheck } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 
 const skillCategories = [
   {
-    title: "Infrastructure",
+    title: "Cloud & Infra",
     icon: <Cloud className="h-7 w-7" />,
-    skills: ["AWS Essentials", "Docker Containers", "Kubernetes Basics", "Terraform (IaC)", "Nginx Config"],
+    skills: ["AWS (EKS, EC2, S3)", "Terraform (IaC)", "Kubernetes & Helm", "Docker Orchestration", "Nginx & Load Balancing"],
     variant: "clay-primary"
   },
   {
-    title: "DevOps Tools",
+    title: "DevOps & Tooling",
     icon: <Terminal className="h-7 w-7" />,
-    skills: ["Linux SysAdmin", "Git & CI/CD", "Shell Scripting", "GitHub Actions", "Monitoring"],
+    skills: ["CI/CD (GitHub Actions)", "Prometheus & Grafana", "ArgoCD (GitOps)", "Linux SysAdmin", "Ansible Configuration"],
     variant: "clay"
   },
   {
-    title: "Community",
-    icon: <Code className="h-7 w-7" />,
-    skills: ["Python", "JS / React", "Technical Writing", "Event Organizing", "Public Speaking"],
+    title: "Development",
+    icon: <ShieldCheck className="h-7 w-7" />,
+    skills: ["Bash/Shell Scripting", "Python for Automation", "Golang Basics", "Security Best Practices", "REST API Context"],
     variant: "clay-accent"
   }
 ];
 
-const softSkills = ["Leadership", "Collaboration", "Problem Solving", "Adaptability", "Mentorship"];
+const softSkills = ["System Architecture", "Incident Management", "Team Leadership", "Cost Optimization", "Mentorship"];
 
 export function Skills() {
   return (
@@ -30,11 +30,11 @@ export function Skills() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-20 reveal-on-scroll">
           <div className="inline-block px-4 py-1.5 clay mb-4 text-xs font-bold text-primary uppercase tracking-widest border-white/10">
-            My Stack
+            Technical Stack
           </div>
-          <h2 className="text-4xl md:text-5xl font-headline font-bold text-foreground mb-6">Technical Prowess</h2>
+          <h2 className="text-4xl md:text-5xl font-headline font-bold text-foreground mb-6">Expertise</h2>
           <p className="text-xl text-muted-foreground">
-            A growing toolkit focused on modern infrastructure, automation, and community building.
+            A comprehensive toolkit focused on high-availability infrastructure and automated developer workflows.
           </p>
         </div>
 
@@ -67,9 +67,9 @@ export function Skills() {
           <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.05)">
             <div className="clay-primary p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 border-none">
               <div className="max-w-md text-center md:text-left">
-                <h3 className="text-3xl font-extrabold mb-4">Community Engagement</h3>
+                <h3 className="text-3xl font-extrabold mb-4">Engineering Excellence</h3>
                 <p className="text-primary-foreground/90 text-lg leading-relaxed">
-                  Beyond technical skills, I am deeply involved in fostering inclusive and knowledge-sharing environments.
+                  I prioritize system observability, automated disaster recovery, and reducing mean time to recovery (MTTR).
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 justify-center md:justify-end">
@@ -84,7 +84,6 @@ export function Skills() {
         </div>
       </div>
       
-      {/* Background shape */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] bg-accent/5 rounded-full blur-[150px] -z-0"></div>
     </section>
   );

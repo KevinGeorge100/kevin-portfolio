@@ -1,30 +1,29 @@
-
-import { User, Server, Globe, ShieldCheck } from "lucide-react";
+import { Terminal, Server, Cpu, Code2 } from "lucide-react";
 
 export function About() {
   const cards = [
     {
-      icon: <User className="h-7 w-7" />,
-      title: "CS Undergraduate",
-      desc: "Pursuing my degree with a focus on core computing principles and emerging cloud tech.",
+      icon: <Cpu className="h-7 w-7" />,
+      title: "Platform Engineering",
+      desc: "Building internal developer platforms that simplify complex cloud deployments.",
       delay: "delay-0"
     },
     {
       icon: <Server className="h-7 w-7" />,
-      title: "Cloud Infra",
-      desc: "Passionate about AWS, Docker, Kubernetes, and managing complex scalable infrastructure.",
+      title: "Orchestration",
+      desc: "Hands-on experience with Kubernetes, Docker, and managing microservice fleets.",
       delay: "delay-100"
     },
     {
-      icon: <ShieldCheck className="h-7 w-7" />,
-      title: "DevOps Expert",
-      desc: "Automating software delivery lifecycles through robust CI/CD and monitoring solutions.",
+      icon: <Terminal className="h-7 w-7" />,
+      title: "Automation (IaC)",
+      desc: "Treating infrastructure as code using Terraform and Ansible for reproducible environments.",
       delay: "delay-200"
     },
     {
-      icon: <Globe className="h-7 w-7" />,
-      title: "Kerala, India",
-      desc: "Proudly based in Kerala, collaborating globally on open-source and cloud initiatives.",
+      icon: <Code2 className="h-7 w-7" />,
+      title: "Full-Stack Context",
+      desc: "Understanding the developer workflow to build better pipelines and developer experiences.",
       delay: "delay-300"
     }
   ];
@@ -34,11 +33,11 @@ export function About() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-20 reveal-on-scroll">
           <div className="inline-block px-4 py-1.5 clay mb-4 text-xs font-bold text-primary uppercase tracking-widest">
-            My Journey
+            Philosophy
           </div>
           <h2 className="text-4xl md:text-5xl font-headline font-bold text-foreground mb-6">About Me</h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            I'm a computer science undergraduate based in <span className="text-primary font-bold">Kerala, India</span>. My journey in tech is driven by a fascination with how large-scale systems operate and a commitment to engineering excellence through automation and cloud-native practices.
+            I'm a computer science undergraduate based in <span className="text-primary font-bold">Kerala, India</span>. I bridge the gap between software development and IT operations, focusing on <span className="text-accent font-bold">reliability, scalability, and speed</span>.
           </p>
         </div>
 
@@ -57,7 +56,6 @@ export function About() {
         </div>
       </div>
       
-      {/* Decorative background shapes */}
       <div className="absolute top-1/4 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-0"></div>
       <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-0"></div>
     </section>

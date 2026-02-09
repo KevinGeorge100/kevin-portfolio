@@ -8,25 +8,25 @@ import { SpotlightCard } from "@/components/ui/spotlight-card";
 const projects = [
   {
     id: "project-1",
-    title: "Cloud-Native Manager",
-    description: "A containerized microservices application demonstrating orchestration with Kubernetes.",
-    tags: ["Docker", "Kubernetes", "Redis"],
+    title: "K8s Microservices Lab",
+    description: "A complete platform-as-a-service prototype featuring automated horizontal scaling and Redis caching.",
+    tags: ["Kubernetes", "Docker", "Prometheus", "Helm"],
     link: "#",
     repo: "#"
   },
   {
     id: "project-2",
-    title: "Automated CI/CD",
-    description: "Multi-stage pipeline setup for automated testing, building, and deploying static sites.",
-    tags: ["GitHub Actions", "AWS"],
+    title: "GitOps CI/CD Pipeline",
+    description: "Multi-environment deployment pipeline using GitHub Actions and ArgoCD for blue/green deployments.",
+    tags: ["ArgoCD", "Terraform", "GitHub Actions"],
     link: "#",
     repo: "#"
   },
   {
     id: "project-3",
-    title: "Community Portal",
-    description: "Volunteer-led platform for organizing local tech meetups and resource sharing.",
-    tags: ["Next.js", "Firebase"],
+    title: "Infra-Monitor Dashboard",
+    description: "Real-time observability platform for monitoring server health and application latency using Grafana.",
+    tags: ["Grafana", "Prometheus", "Node Exporter"],
     link: "#",
     repo: "#"
   }
@@ -39,15 +39,15 @@ export function Projects() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 reveal-on-scroll">
           <div className="max-w-xl">
             <div className="inline-block px-4 py-1.5 clay mb-4 text-xs font-bold text-accent uppercase tracking-widest border-white/10">
-              My Portfolio
+              Technical Labs
             </div>
-            <h2 className="text-4xl md:text-5xl font-headline font-bold text-foreground mb-4">Featured Work</h2>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold text-foreground mb-4">Infrastructure Work</h2>
             <p className="text-lg text-muted-foreground">
-              Showcasing my journey through cloud infrastructure, automation, and community projects.
+              Deep dives into automation, platform resilience, and cloud-native architecture.
             </p>
           </div>
           <Link href="https://github.com" className="clay px-6 py-3 text-primary font-bold hover:clay-primary hover:scale-105 transition-all flex items-center mt-8 md:mt-0 border-white/10">
-            View All GitHub <ExternalLink className="ml-2 h-4 w-4" />
+            View GitHub Lab <ExternalLink className="ml-2 h-4 w-4" />
           </Link>
         </div>
 
@@ -82,10 +82,10 @@ export function Projects() {
                     </p>
                     <div className="flex gap-4">
                       <Link href={project.link} className="flex-1 text-center py-2 clay-primary text-xs font-bold hover:scale-105 transition-all">
-                        Demo
+                        Live Metrics
                       </Link>
                       <Link href={project.repo} className="flex-1 text-center py-2 clay text-xs font-bold hover:scale-105 transition-all border-white/10">
-                        Code
+                        View Code
                       </Link>
                     </div>
                   </div>
@@ -96,7 +96,6 @@ export function Projects() {
         </div>
       </div>
       
-      {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 rounded-full blur-[150px] -z-0 pointer-events-none"></div>
     </section>
   );

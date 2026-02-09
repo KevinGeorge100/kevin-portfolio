@@ -15,7 +15,6 @@ export function Hero() {
 
   return (
     <AuroraBackground className="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden min-h-screen relative">
-      {/* Waves Background Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-40">
         <Waves 
           className="w-full h-full"
@@ -31,25 +30,25 @@ export function Hero() {
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 text-center md:text-left reveal-on-scroll">
             <div className="inline-block px-4 py-1.5 clay mb-6 text-sm font-bold text-accent uppercase tracking-widest animate-blur-in opacity-0">
-              DevOps Engineer
+              Cloud & Platform Engineering
             </div>
             
             <h1 className="text-4xl md:text-7xl font-headline font-extrabold text-foreground leading-tight mb-6 flex flex-wrap justify-center md:justify-start">
               <BlurText text="I'm" baseDelay={0.1} />
               <BlurText text="Kevin George," className="text-primary ml-2" baseDelay={0.2} />
               <BlurText text="a" className="ml-2" baseDelay={0.4} />
-              <BlurText text="DevOps Expert." className="text-primary ml-2" baseDelay={0.5} />
+              <BlurText text="DevOps Engineer." className="text-primary ml-2" baseDelay={0.5} />
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto md:mx-0 reveal-on-scroll delay-500">
-              CS Undergraduate student passionate about automating infrastructure, streamlining deployments, and building robust cloud-native systems.
+              Transforming code into scalable, resilient infrastructure. I specialize in Kubernetes orchestration, CI/CD automation, and cloud-native observability.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start reveal-on-scroll delay-700">
               <Magnetic strength={0.2}>
                 <Button asChild size="lg" className="clay-primary h-14 px-10 text-lg hover:scale-105 transition-transform duration-300">
                   <Link href="#projects">
-                    View My Projects <ArrowRight className="ml-2 h-5 w-5" />
+                    Explore Labs <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
               </Magnetic>
