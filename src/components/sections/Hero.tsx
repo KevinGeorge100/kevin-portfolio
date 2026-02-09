@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -17,14 +16,14 @@ export function Hero() {
   return (
     <AuroraBackground className="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden min-h-screen relative">
       {/* Waves Background Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-60">
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-40">
         <Waves 
           className="w-full h-full"
-          count={50}
-          waveAmpX={80}
-          waveAmpY={40}
-          waveSpeedX={0.008}
-          waveSpeedY={0.006}
+          count={40}
+          waveAmpX={60}
+          waveAmpY={30}
+          waveSpeedX={0.006}
+          waveSpeedY={0.004}
         />
       </div>
 
@@ -32,23 +31,23 @@ export function Hero() {
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 text-center md:text-left reveal-on-scroll">
             <div className="inline-block px-4 py-1.5 clay mb-6 text-sm font-bold text-accent uppercase tracking-widest animate-blur-in opacity-0">
-              Cloud & Infrastructure
+              DevOps Engineer
             </div>
             
             <h1 className="text-4xl md:text-7xl font-headline font-extrabold text-foreground leading-tight mb-6 flex flex-wrap justify-center md:justify-start">
-              <BlurText text="I'm" baseDelay={0.2} />
-              <BlurText text="Kevin George," className="text-primary ml-2" baseDelay={0.4} />
-              <BlurText text="a" className="ml-2" baseDelay={0.8} />
-              <BlurText text="DevOps Engineer." className="text-primary ml-2" baseDelay={1.0} />
+              <BlurText text="I'm" baseDelay={0.1} />
+              <BlurText text="Kevin George," className="text-primary ml-2" baseDelay={0.2} />
+              <BlurText text="a" className="ml-2" baseDelay={0.4} />
+              <BlurText text="DevOps Expert." className="text-primary ml-2" baseDelay={0.5} />
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto md:mx-0 reveal-on-scroll delay-700">
+            <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto md:mx-0 reveal-on-scroll delay-500">
               CS Undergraduate student passionate about automating infrastructure, streamlining deployments, and building robust cloud-native systems.
             </p>
             
-            <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start reveal-on-scroll delay-1000">
+            <div className="flex flex-col sm:flex-row items-center gap-6 justify-center md:justify-start reveal-on-scroll delay-700">
               <Magnetic strength={0.2}>
-                <Button asChild size="lg" className="clay-primary h-14 px-10 text-lg hover:scale-105 transition-transform">
+                <Button asChild size="lg" className="clay-primary h-14 px-10 text-lg hover:scale-105 transition-transform duration-300">
                   <Link href="#projects">
                     View My Projects <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -56,36 +55,37 @@ export function Hero() {
               </Magnetic>
               <div className="flex items-center gap-4">
                 <Magnetic strength={0.4}>
-                  <Link href="https://github.com" className="p-3 clay hover:bg-white/50 transition-all text-primary" aria-label="GitHub">
+                  <Link href="https://github.com" className="p-3 clay hover:bg-white/10 transition-all text-primary" aria-label="GitHub">
                     <Github className="h-6 w-6" />
                   </Link>
                 </Magnetic>
                 <Magnetic strength={0.4}>
-                  <Link href="https://linkedin.com" className="p-3 clay hover:bg-white/50 transition-all text-primary" aria-label="LinkedIn">
+                  <Link href="https://linkedin.com" className="p-3 clay hover:bg-white/10 transition-all text-primary" aria-label="LinkedIn">
                     <Linkedin className="h-6 w-6" />
                   </Link>
                 </Magnetic>
                 <Magnetic strength={0.4}>
-                  <Link href="https://twitter.com" className="p-3 clay hover:bg-white/50 transition-all text-primary" aria-label="Twitter">
+                  <Link href="https://twitter.com" className="p-3 clay hover:bg-white/10 transition-all text-primary" aria-label="Twitter">
                     <Twitter className="h-6 w-6" />
                   </Link>
                 </Magnetic>
               </div>
             </div>
           </div>
-          <div className="flex-1 relative reveal-on-scroll delay-500">
-            <div className="relative w-72 h-72 md:w-[28rem] md:h-[28rem] mx-auto">
+          <div className="flex-1 relative reveal-on-scroll delay-300">
+            <div className="relative w-64 h-64 md:w-[26rem] md:h-[26rem] mx-auto">
               <div className="absolute inset-0 bg-primary/10 rounded-[3rem] rotate-6 scale-105 blur-2xl"></div>
               <div className="absolute inset-0 bg-accent/10 rounded-[3rem] -rotate-3 scale-105 blur-2xl"></div>
-              <div className="relative w-full h-full clay p-4 overflow-hidden group">
-                <div className="relative w-full h-full rounded-[2rem] overflow-hidden border-4 border-white/50">
+              <div className="relative w-full h-full clay p-3 overflow-hidden group">
+                <div className="relative w-full h-full rounded-[2rem] overflow-hidden border-2 border-white/20">
                   <Image
                     src={portrait?.imageUrl || "https://picsum.photos/seed/kevin/600/600"}
                     alt="Kevin George"
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 256px, 416px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     priority
-                    data-ai-hint="young professional"
+                    loading="eager"
                   />
                 </div>
               </div>

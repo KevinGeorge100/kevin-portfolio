@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useRef, useEffect } from "react";
@@ -10,28 +9,20 @@ interface WavesProps {
   waveSpeedY?: number;
   waveAmpX?: number;
   waveAmpY?: number;
-  friction?: number;
-  tension?: number;
-  maxLines?: number;
   count?: number;
   className?: string;
 }
 
 /**
- * Waves - A high-performance Canvas-based background animation.
- * Inspired by ReactBits design patterns.
+ * Optimized Waves - High-performance background with reduced line count and cleaner draw loop.
  */
 export function Waves({
-  lineColor = "rgba(var(--primary), 0.2)",
   backgroundColor = "transparent",
-  waveSpeedX = 0.01,
-  waveSpeedY = 0.01,
+  waveSpeedX = 0.008,
+  waveSpeedY = 0.008,
   waveAmpX = 60,
   waveAmpY = 30,
-  friction = 0.9,
-  tension = 0.01,
-  maxLines = 100,
-  count = 60,
+  count = 40,
   className,
 }: WavesProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -39,7 +30,7 @@ export function Waves({
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d", { alpha: true });
     if (!ctx) return;
 
     let width = (canvas.width = window.innerWidth);
@@ -55,8 +46,11 @@ export function Waves({
     let animationId: number;
     let time = 0;
 
+    // Cache primary color to avoid repeated DOM lookups in render loop
+    const primaryHSL = getComputedStyle(document.documentElement).getPropertyValue("--primary").trim() || "210 100% 66%";
+
     const draw = () => {
-      time += 0.015;
+      time += 0.01;
       ctx.clearRect(0, 0, width, height);
 
       if (backgroundColor !== "transparent") {
@@ -64,23 +58,20 @@ export function Waves({
         ctx.fillRect(0, 0, width, height);
       }
 
-      // Get primary color from CSS variables (HSL)
-      const primaryHSL = getComputedStyle(document.documentElement).getPropertyValue("--primary").trim();
-      
       ctx.save();
-      ctx.lineWidth = 1.5;
+      ctx.lineWidth = 1;
 
       for (let i = 0; i < count; i++) {
         ctx.beginPath();
-        // Dynamic opacity based on line index for depth effect
-        ctx.strokeStyle = `hsla(${primaryHSL}, ${0.03 + (i / count) * 0.1})`;
+        const opacity = 0.02 + (i / count) * 0.08;
+        ctx.strokeStyle = `hsla(${primaryHSL}, ${opacity})`;
         
-        for (let x = 0; x < width + 40; x += 40) {
+        for (let x = 0; x < width + 80; x += 80) {
           const y =
             height / 2 +
             Math.sin(x * waveSpeedX + time + i * 0.1) * waveAmpX +
             Math.cos(x * waveSpeedY + time * 0.5 + i * 0.2) * waveAmpY +
-            (i - count / 2) * 15;
+            (i - count / 2) * 12;
           
           if (x === 0) {
             ctx.moveTo(x, y);
@@ -103,5 +94,5 @@ export function Waves({
     };
   }, [backgroundColor, count, waveAmpX, waveAmpY, waveSpeedX, waveSpeedY]);
 
-  return <canvas ref={canvasRef} className={className} />;
+  return <canvas ref={canvasRef} className={className} style={{ pointerEvents: 'none' }} />;
 }
