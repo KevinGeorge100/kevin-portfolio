@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -40,15 +41,17 @@ export function Hero() {
           {/* Left Content */}
           <div className="flex flex-col space-y-8">
             <div className="space-y-2">
+              <span className="text-primary text-xl font-black uppercase tracking-widest block mb-2">Hello, I&apos;m</span>
               <h1 className="text-7xl md:text-9xl font-black tracking-tighter leading-[0.9]">
-                <span className="text-primary block">Kevin</span>
+                <span className="text-white block">Kevin</span>
                 <span className="text-white block">George</span>
               </h1>
+              <span className="text-accent text-3xl md:text-5xl font-black tracking-tight block mt-4">DevOps Engineer</span>
             </div>
 
             <div className="max-w-md">
               <BlurText 
-                text="I'm a computer science undergraduate and DevOps Engineer specializing in cloud automation, infrastructure as code, and site reliability."
+                text="I specialize in cloud automation, infrastructure as code, and building highly resilient site reliability frameworks."
                 className="text-lg md:text-xl text-white/60 leading-relaxed font-medium"
                 delay={0.03}
               />
@@ -64,16 +67,16 @@ export function Hero() {
             </button>
           </div>
 
-          {/* Right Content - The Portrait */}
-          <div className="relative aspect-[4/5] w-full max-w-2xl mx-auto lg:ml-auto">
+          {/* Right Content - The Portrait (Refined Size) */}
+          <div className="relative aspect-[4/5] w-full max-w-lg mx-auto lg:ml-auto">
             {/* The Big Lime Checkmark Behind Portrait */}
-            <div className="absolute -inset-20 -z-10 pointer-events-none">
-              <svg viewBox="0 0 500 500" className="w-full h-full text-primary fill-current opacity-90 rotate-[-15deg]">
+            <div className="absolute -inset-10 -z-10 pointer-events-none">
+              <svg viewBox="0 0 500 500" className="w-full h-full text-primary fill-current opacity-90 rotate-[-10deg]">
                  <path d="M100,250 L200,350 L450,100 L400,50 L200,250 L150,200 Z" />
               </svg>
             </div>
 
-            <div className="relative w-full h-full rounded-[3rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 group">
+            <div className="relative w-full h-full rounded-[3rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 group shadow-[0_0_50px_rgba(var(--primary),0.2)]">
               <Image
                 src={portrait?.imageUrl || "https://picsum.photos/seed/kevin/800/1000"}
                 alt="Kevin George"
@@ -82,12 +85,15 @@ export function Hero() {
                 priority
               />
               {/* Badge/Sticker Overlay */}
-              <div className="absolute bottom-10 left-10 w-32 h-32 bg-white rounded-full p-1 shadow-2xl animate-spin-slow flex items-center justify-center border-4 border-primary">
-                <div className="text-[10px] font-black text-black text-center uppercase tracking-widest leading-tight">
-                  DevOps • Cloud • Infra • Kubernetes
+              <div className="absolute bottom-8 right-8 w-28 h-28 bg-white rounded-full p-1 shadow-2xl animate-spin-slow flex items-center justify-center border-4 border-primary z-20">
+                <div className="text-[9px] font-black text-black text-center uppercase tracking-widest leading-tight">
+                  DevOps • Cloud • Infra • K8s
                 </div>
               </div>
             </div>
+            
+            {/* Glow Aura */}
+            <div className="absolute inset-0 bg-accent/20 blur-[120px] rounded-full -z-20 opacity-40"></div>
           </div>
 
         </div>
