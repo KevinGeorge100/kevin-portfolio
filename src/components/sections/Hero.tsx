@@ -1,14 +1,18 @@
+
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { BlurText } from "@/components/ui/blur-text";
-import { MoveRight } from "lucide-react";
+import { MoveRight, Download, Activity } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { cn } from "@/lib/utils";
 
 export function Hero() {
   const portrait = PlaceHolderImages.find(img => img.id === "hero-portrait");
+  const [status, setStatus] = useState("operational");
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-background">
@@ -25,12 +29,18 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
           
           {/* Left Content */}
-          <div className="flex flex-col space-y-6 text-center lg:text-left lg:max-w-xl">
-            <div className="space-y-1">
-              <span className="text-primary text-lg font-black uppercase tracking-widest block mb-2">Hello, I&apos;m</span>
+          <div className="flex flex-col space-y-8 text-center lg:text-left lg:max-w-xl">
+            <div className="space-y-2">
+              <div className="flex items-center gap-3 justify-center lg:justify-start mb-4">
+                <div className="flex items-center gap-2 px-3 py-1 clay rounded-full border border-white/10">
+                  <Activity className="h-3 w-3 text-primary animate-pulse" />
+                  <span className="text-[10px] font-black uppercase tracking-widest text-white/70">Systems: Operational</span>
+                </div>
+              </div>
+              <span className="text-primary text-lg font-black uppercase tracking-widest block">Hello, I&apos;m</span>
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9]">
                 <span className="text-white block">Kevin</span>
                 <span className="text-white block">George</span>
@@ -46,30 +56,39 @@ export function Hero() {
               />
             </div>
 
-            <Link 
-              href="https://www.linkedin.com/in/kwingeorge/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative w-fit h-14 px-8 rounded-full bg-primary text-black font-bold text-base flex items-center gap-3 hover:scale-105 transition-all mx-auto lg:mx-0"
-            >
-              <div className="flex items-center gap-1">
-                <MoveRight className="w-4 h-4" />
-                <MoveRight className="w-4 h-4 opacity-60" />
-              </div>
-              <span>Get In Touch</span>
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+              <Link 
+                href="https://www.linkedin.com/in/kwingeorge/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative h-14 px-8 rounded-full bg-primary text-black font-bold text-base flex items-center gap-3 hover:scale-105 transition-all shadow-xl shadow-primary/10"
+              >
+                <div className="flex items-center gap-1">
+                  <MoveRight className="w-4 h-4" />
+                </div>
+                <span>Connect with Me</span>
+              </Link>
+
+              <button 
+                onClick={() => window.open('/resume.pdf', '_blank')}
+                className="group h-14 px-8 rounded-full clay border border-white/10 text-white font-bold text-base flex items-center gap-3 hover:bg-white/10 transition-all"
+              >
+                <Download className="w-4 h-4 text-accent group-hover:animate-bounce" />
+                <span>Download CV</span>
+              </button>
+            </div>
           </div>
 
           {/* Right Content - Compact Portrait */}
-          <div className="relative aspect-[4/5] w-full max-w-[320px] flex-shrink-0">
+          <div className="relative aspect-[4/5] w-full max-w-[300px] flex-shrink-0">
             {/* The Big Lime Checkmark Behind Portrait */}
-            <div className="absolute -inset-8 -z-10 pointer-events-none">
+            <div className="absolute -inset-12 -z-10 pointer-events-none">
               <svg viewBox="0 0 500 500" className="w-full h-full text-primary fill-current opacity-90 rotate-[-10deg]">
                  <path d="M100,250 L200,350 L450,100 L400,50 L200,250 L150,200 Z" />
               </svg>
             </div>
 
-            <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 group shadow-[0_0_50px_rgba(var(--primary),0.2)] border-2 border-white/10">
+            <div className="relative w-full h-full rounded-[3rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 group shadow-[0_0_50px_rgba(var(--primary),0.2)] border-2 border-white/20">
               <Image
                 src={portrait?.imageUrl || "https://picsum.photos/seed/kevin/800/1000"}
                 alt="Kevin George"
