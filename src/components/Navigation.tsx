@@ -24,24 +24,24 @@ export function Navigation() {
   }, []);
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 px-6 md:px-12 flex items-center justify-between",
-        scrolled ? "bg-black/80 backdrop-blur-md py-4 border-b border-white/5" : "bg-transparent"
-      )}
-    >
-      <Link href="#home" className="text-lg font-bold tracking-tight hover:opacity-70 transition-opacity">
-        Kevin George
+    <nav className={cn(
+      "nav-pill",
+      scrolled ? "bg-black/80 scale-95" : "bg-white/5"
+    )}>
+      <Link href="#home" className="flex items-center">
+        <div className="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center">
+          <div className="w-4 h-4 rounded-full bg-primary animate-pulse" />
+        </div>
       </Link>
 
-      <div className="hidden md:flex items-center space-x-6">
+      <div className="flex items-center space-x-6">
         {navLinks.map((link) => (
           <Link
             key={link.name}
             href={link.href}
-            className="text-[13px] font-medium text-white/60 hover:text-white transition-colors"
+            className="text-[14px] font-medium text-white/70 hover:text-primary transition-colors"
           >
-            ( {link.name} )
+            {link.name}
           </Link>
         ))}
       </div>

@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
+    --background: 240 10% 4%;
     --foreground: 0 0% 100%;
-    --card: 240 10% 4%;
+    --card: 240 10% 6%;
     --card-foreground: 210 40% 98%;
-    --popover: 240 10% 4%;
+    --popover: 240 10% 6%;
     --popover-foreground: 210 40% 98%;
     --primary: 75 100% 50%;
     --primary-foreground: 0 0% 0%;
@@ -20,8 +20,8 @@
     --accent-foreground: 210 40% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 240 10% 12%;
-    --input: 240 10% 12%;
+    --border: 240 10% 15%;
+    --input: 240 10% 15%;
     --ring: 75 100% 50%;
     --radius: 2rem;
   }
@@ -72,4 +72,8 @@
 
 .animate-blur-in {
   animation: blur-in 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.nav-pill {
+  @apply fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 clay rounded-full flex items-center gap-8 border border-white/10 transition-all duration-300;
 }
