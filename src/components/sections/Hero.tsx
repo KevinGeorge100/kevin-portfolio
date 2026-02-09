@@ -1,15 +1,15 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export function Hero() {
   const portrait = PlaceHolderImages.find(img => img.id === "hero-portrait");
 
   return (
-    <section id="home" className="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <AuroraBackground className="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden min-h-screen">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 text-center md:text-left reveal-on-scroll">
@@ -19,7 +19,7 @@ export function Hero() {
             <h1 className="text-4xl md:text-6xl font-headline font-extrabold text-foreground leading-tight mb-6">
               I'm <span className="text-primary">Kevin George</span>, a <span className="text-primary">DevOps Engineer</span>.
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto md:mx-0">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-0 md:mx-0">
               CS Undergraduate student passionate about automating infrastructure, streamlining deployments, and building robust cloud-native systems.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
@@ -45,7 +45,7 @@ export function Hero() {
             <div className="relative w-64 h-64 md:w-96 md:h-96 mx-auto">
               <div className="absolute inset-0 bg-primary/10 rounded-3xl rotate-6 -z-10"></div>
               <div className="absolute inset-0 bg-accent/10 rounded-3xl -rotate-3 -z-10"></div>
-              <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-background">
+              <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border-4 border-background bg-card">
                 <Image
                   src={portrait?.imageUrl || "https://picsum.photos/seed/kevin/600/600"}
                   alt="Kevin George"
@@ -59,6 +59,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </AuroraBackground>
   );
 }
