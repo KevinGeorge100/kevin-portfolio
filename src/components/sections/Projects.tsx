@@ -11,24 +11,24 @@ const projects = [
     title: "K8s Microservices Lab",
     description: "A complete platform-as-a-service prototype featuring automated horizontal scaling and Redis caching.",
     tags: ["Kubernetes", "Docker", "Prometheus", "Helm"],
-    link: "#",
-    repo: "#"
+    link: "https://github.com/kevingeorge",
+    repo: "https://github.com/kevingeorge"
   },
   {
     id: "project-2",
     title: "GitOps CI/CD Pipeline",
     description: "Multi-environment deployment pipeline using GitHub Actions and ArgoCD for blue/green deployments.",
     tags: ["ArgoCD", "Terraform", "GitHub Actions"],
-    link: "#",
-    repo: "#"
+    link: "https://github.com/kevingeorge",
+    repo: "https://github.com/kevingeorge"
   },
   {
     id: "project-3",
     title: "Infra-Monitor Dashboard",
     description: "Real-time observability platform for monitoring server health and application latency using Grafana.",
     tags: ["Grafana", "Prometheus", "Node Exporter"],
-    link: "#",
-    repo: "#"
+    link: "https://github.com/kevingeorge",
+    repo: "https://github.com/kevingeorge"
   }
 ];
 
@@ -46,8 +46,12 @@ export function Projects() {
               Deep dives into automation, platform resilience, and cloud-native architecture.
             </p>
           </div>
-          <Link href="https://github.com" className="clay px-6 py-3 text-primary font-bold hover:clay-primary hover:scale-105 transition-all flex items-center mt-8 md:mt-0 border-white/10">
-            View GitHub Lab <ExternalLink className="ml-2 h-4 w-4" />
+          <Link 
+            href="https://github.com/kevingeorge" 
+            target="_blank" 
+            className="clay px-6 py-3 text-primary font-bold hover:clay-primary hover:scale-105 transition-all flex items-center mt-8 md:mt-0 border-white/10"
+          >
+            <Github className="mr-2 h-5 w-5" /> View GitHub Lab <ExternalLink className="ml-2 h-4 w-4" />
           </Link>
         </div>
 
@@ -81,10 +85,10 @@ export function Projects() {
                       {project.description}
                     </p>
                     <div className="flex gap-4">
-                      <Link href={project.link} className="flex-1 text-center py-2 clay-primary text-xs font-bold hover:scale-105 transition-all">
+                      <Link href={project.link} target="_blank" className="flex-1 text-center py-2 clay-primary text-xs font-bold hover:scale-105 transition-all">
                         Live Metrics
                       </Link>
-                      <Link href={project.repo} className="flex-1 text-center py-2 clay text-xs font-bold hover:scale-105 transition-all border-white/10">
+                      <Link href={project.repo} target="_blank" className="flex-1 text-center py-2 clay text-xs font-bold hover:scale-105 transition-all border-white/10">
                         View Code
                       </Link>
                     </div>

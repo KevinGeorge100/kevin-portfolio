@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -9,7 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, MapPin, Send, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import Link from "next/link";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -73,11 +73,21 @@ export function Contact() {
 
               <div className="flex items-center gap-6 group">
                 <div className="p-4 clay text-primary group-hover:clay-primary transition-all duration-300">
-                  <MessageCircle className="h-7 w-7" />
+                  <Github className="h-7 w-7" />
                 </div>
                 <div>
                   <h4 className="font-extrabold text-lg">Socials</h4>
-                  <p className="text-muted-foreground text-lg">LinkedIn, Twitter, GitHub</p>
+                  <div className="flex gap-4 mt-2">
+                    <Link href="https://github.com/kevingeorge" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                      <Github className="h-6 w-6" />
+                    </Link>
+                    <Link href="https://linkedin.com" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                      <Linkedin className="h-6 w-6" />
+                    </Link>
+                    <Link href="https://twitter.com" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                      <Twitter className="h-6 w-6" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
