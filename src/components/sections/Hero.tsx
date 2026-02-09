@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { BlurText } from "@/components/ui/blur-text";
 import { MoveRight } from "lucide-react";
@@ -57,14 +58,19 @@ export function Hero() {
               />
             </div>
 
-            <button className="group relative w-fit h-16 px-8 rounded-full bg-primary text-black font-bold text-lg flex items-center gap-4 hover:scale-105 transition-all mx-auto lg:mx-0">
+            <Link 
+              href="https://www.linkedin.com/in/kwingeorge/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative w-fit h-16 px-8 rounded-full bg-primary text-black font-bold text-lg flex items-center gap-4 hover:scale-105 transition-all mx-auto lg:mx-0"
+            >
               <div className="flex items-center gap-1">
                 <MoveRight className="w-5 h-5" />
                 <MoveRight className="w-5 h-5 opacity-60" />
                 <MoveRight className="w-5 h-5 opacity-30" />
               </div>
               <span>Get In Touch</span>
-            </button>
+            </Link>
           </div>
 
           {/* Right Content - The Portrait (Compact Size) */}
