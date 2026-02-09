@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -10,6 +11,7 @@ const nextConfig: NextConfig = {
   },
   output: 'export',
   basePath: '/kevin-portfolio',
+  trailingSlash: true,
   images: {
     unoptimized: true,
     remotePatterns: [

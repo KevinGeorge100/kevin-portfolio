@@ -12,7 +12,12 @@ import { cn } from "@/lib/utils";
 
 export function Hero() {
   const portrait = PlaceHolderImages.find(img => img.id === "hero-portrait");
-  const [status, setStatus] = useState("operational");
+  
+  const handleResumeDownload = () => {
+    // Correctly handle the basePath for assets in static export
+    const basePath = '/kevin-portfolio';
+    window.open(`${basePath}/resume.pdf`, '_blank');
+  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-background">
@@ -70,7 +75,7 @@ export function Hero() {
               </Link>
 
               <button 
-                onClick={() => window.open('/resume.pdf', '_blank')}
+                onClick={handleResumeDownload}
                 className="group h-14 px-8 rounded-full clay border border-white/10 text-white font-bold text-base flex items-center gap-3 hover:bg-white/10 transition-all"
               >
                 <Download className="w-4 h-4 text-accent group-hover:animate-bounce" />
