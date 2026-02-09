@@ -36,7 +36,7 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-4 items-center">
           
           {/* Left Content */}
           <div className="flex flex-col space-y-8">
@@ -67,8 +67,8 @@ export function Hero() {
             </button>
           </div>
 
-          {/* Right Content - The Portrait (Refined Size) */}
-          <div className="relative aspect-[4/5] w-full max-w-lg mx-auto lg:ml-auto">
+          {/* Right Content - The Portrait (More Compact Size) */}
+          <div className="relative aspect-[4/5] w-full max-w-[320px] mx-auto lg:ml-0">
             {/* The Big Lime Checkmark Behind Portrait */}
             <div className="absolute -inset-10 -z-10 pointer-events-none">
               <svg viewBox="0 0 500 500" className="w-full h-full text-primary fill-current opacity-90 rotate-[-10deg]">
@@ -76,7 +76,7 @@ export function Hero() {
               </svg>
             </div>
 
-            <div className="relative w-full h-full rounded-[3rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 group shadow-[0_0_50px_rgba(var(--primary),0.2)]">
+            <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 group shadow-[0_0_50px_rgba(var(--primary),0.2)]">
               <Image
                 src={portrait?.imageUrl || "https://picsum.photos/seed/kevin/800/1000"}
                 alt="Kevin George"
@@ -85,15 +85,15 @@ export function Hero() {
                 priority
               />
               {/* Badge/Sticker Overlay */}
-              <div className="absolute bottom-8 right-8 w-28 h-28 bg-white rounded-full p-1 shadow-2xl animate-spin-slow flex items-center justify-center border-4 border-primary z-20">
-                <div className="text-[9px] font-black text-black text-center uppercase tracking-widest leading-tight">
+              <div className="absolute bottom-6 right-6 w-24 h-24 bg-white rounded-full p-1 shadow-2xl animate-spin-slow flex items-center justify-center border-4 border-primary z-20">
+                <div className="text-[8px] font-black text-black text-center uppercase tracking-widest leading-tight">
                   DevOps • Cloud • Infra • K8s
                 </div>
               </div>
             </div>
             
             {/* Glow Aura */}
-            <div className="absolute inset-0 bg-accent/20 blur-[120px] rounded-full -z-20 opacity-40"></div>
+            <div className="absolute inset-0 bg-accent/20 blur-[100px] rounded-full -z-20 opacity-40"></div>
           </div>
 
         </div>
