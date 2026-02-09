@@ -37,7 +37,7 @@ export function Hero() {
             <h1 className="text-4xl md:text-7xl font-headline font-extrabold text-foreground leading-tight mb-6 flex flex-wrap justify-center md:justify-start">
               <BlurText text="I'm" baseDelay={0.1} />
               <BlurText text="Kevin George," className="text-primary ml-2" baseDelay={0.2} />
-              <BlurText text="DevOps Engineer." className="text-primary ml-2" baseDelay={0.4} />
+              <BlurText text="DevOps Engineer." className="text-accent ml-2" baseDelay={0.4} />
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto md:mx-0 reveal-on-scroll delay-500">
