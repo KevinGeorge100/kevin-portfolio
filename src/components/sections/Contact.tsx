@@ -57,7 +57,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-extrabold text-lg">Email Me</h4>
-                  <p className="text-muted-foreground text-lg">kevin.george@example.com</p>
+                  <p className="text-muted-foreground text-lg">kevgeorgutty@gmail.com</p>
                 </div>
               </div>
 
@@ -103,7 +103,7 @@ export function Contact() {
                     <FormItem>
                       <FormLabel className="text-sm font-bold ml-2">Your Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Kevin George" {...field} className="clay h-14 px-6 border-none bg-white/50 focus:bg-white transition-all text-lg" />
+                        <Input placeholder="Kevin George" {...field} className="clay h-14 px-6 border-none bg-white/50 focus:bg-white transition-all text-lg" suppressHydrationWarning />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -116,7 +116,7 @@ export function Contact() {
                     <FormItem>
                       <FormLabel className="text-sm font-bold ml-2">Email Address</FormLabel>
                       <FormControl>
-                        <Input placeholder="kevin@example.com" {...field} className="clay h-14 px-6 border-none bg-white/50 focus:bg-white transition-all text-lg" />
+                        <Input placeholder="kevin@example.com" {...field} className="clay h-14 px-6 border-none bg-white/50 focus:bg-white transition-all text-lg" suppressHydrationWarning />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -133,13 +133,14 @@ export function Contact() {
                           placeholder="What's on your mind?" 
                           {...field} 
                           className="clay p-6 border-none bg-white/50 focus:bg-white transition-all min-h-[180px] resize-none text-lg" 
+                          suppressHydrationWarning
                         />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="clay-accent w-full h-16 text-xl font-bold hover:scale-[1.02] transition-all">
+                <Button type="submit" className="clay-accent w-full h-16 text-xl font-bold hover:scale-[1.02] transition-all" suppressHydrationWarning>
                   Send Message <Send className="ml-2 h-6 w-6" />
                 </Button>
               </form>
