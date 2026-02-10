@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
@@ -137,9 +136,9 @@ export function Projects() {
                       <Link 
                         href={project.link} 
                         target="_blank" 
-                        className="flex-1 text-center py-4 clay-primary rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] text-black flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-xl shadow-primary/10"
+                        className="flex-1 text-center py-4 clay rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] text-white/80 hover:bg-white/10 transition-all border border-white/10 flex items-center justify-center gap-2"
                       >
-                        <Zap className="h-3 w-3" />
+                        <Zap className="h-3 w-3 text-primary" />
                         Live Demo
                       </Link>
                       <Link 
@@ -147,7 +146,7 @@ export function Projects() {
                         target="_blank" 
                         className="flex-1 text-center py-4 clay rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] text-white/80 hover:bg-white/10 transition-all border border-white/10 flex items-center justify-center gap-2"
                       >
-                        <Github className="h-3 w-3" />
+                        <Github className="h-3 w-3 text-primary" />
                         Source
                       </Link>
                     </div>
