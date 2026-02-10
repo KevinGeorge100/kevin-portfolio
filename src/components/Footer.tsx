@@ -1,13 +1,23 @@
+
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 export function Footer() {
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="py-12 border-t border-border bg-background">
       <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col gap-2">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Kevin George. All rights reserved.
+            © {year || "..."} Kevin George. All rights reserved.
           </p>
           <div className="flex gap-4 mt-1">
             <Link href="https://github.com/KevinGeorge100" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
