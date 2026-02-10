@@ -1,7 +1,8 @@
 
-import { Terminal, Server, Cpu, Code2, MapPin, Globe2 } from "lucide-react";
+import { Terminal, Server, Cpu, Code2, MapPin, Globe2, ArrowRight } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { Magnetic } from "@/components/ui/magnetic";
+import Link from "next/link";
 
 export function About() {
   const cards = [
@@ -58,6 +59,12 @@ export function About() {
                 <div className="flex items-center gap-2 px-4 py-2 clay rounded-full text-xs font-bold text-white/80 border border-white/5">
                   <Globe2 className="h-4 w-4 text-accent" /> Open to Remote
                 </div>
+              </div>
+
+              <div className="pt-8">
+                <Link href="#contact" className="group flex items-center gap-4 text-white font-black uppercase tracking-widest text-xs hover:text-primary transition-colors">
+                  Work with me <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform text-primary" />
+                </Link>
               </div>
             </div>
           </div>

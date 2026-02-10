@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { BlurText } from "@/components/ui/blur-text";
-import { MoveRight } from "lucide-react";
+import { MoveRight, FileDown, Briefcase } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 
 export function Hero() {
@@ -30,6 +30,12 @@ export function Hero() {
           
           <div className="flex flex-col space-y-8 text-center lg:text-left lg:max-w-xl">
             <div className="space-y-2">
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
+                <span className="flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-[10px] font-black uppercase tracking-widest text-primary animate-pulse">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  Available for Hire
+                </span>
+              </div>
               <span className="text-primary text-lg font-black uppercase tracking-widest block">Hello, I&apos;m</span>
               <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9]">
                 <span className="text-white block">Kevin</span>
@@ -48,13 +54,21 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
               <Link 
-                href="https://www.linkedin.com/in/kwingeorge/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative h-14 px-8 rounded-full bg-primary text-black font-bold text-base flex items-center gap-3 hover:scale-105 transition-all shadow-xl shadow-primary/10"
+                href="#contact" 
+                className="group relative h-14 px-8 rounded-full bg-primary text-black font-bold text-base flex items-center gap-3 hover:scale-105 transition-all shadow-xl shadow-primary/20"
               >
-                <span>Connect with Me</span>
+                <Briefcase className="w-4 h-4" />
+                <span>Hire Me</span>
                 <MoveRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              
+              <Link 
+                href="/resume.pdf" 
+                target="_blank"
+                className="group relative h-14 px-8 rounded-full bg-white/5 border border-white/10 text-white font-bold text-base flex items-center gap-3 hover:bg-white/10 hover:scale-105 transition-all"
+              >
+                <FileDown className="w-4 h-4 group-hover:animate-bounce" />
+                <span>Get Resume</span>
               </Link>
             </div>
           </div>
