@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -103,7 +104,12 @@ export function Contact() {
                     <FormItem>
                       <FormLabel className="text-sm font-bold ml-2">Your Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="Kevin George" {...field} className="clay h-14 px-6 border-none bg-white/50 focus:bg-white transition-all text-lg" suppressHydrationWarning />
+                        <Input 
+                          placeholder="Kevin George" 
+                          {...field} 
+                          className="clay h-14 px-6 border-none bg-white/5 focus:bg-white/10 transition-all text-lg text-white placeholder:text-white/30" 
+                          suppressHydrationWarning 
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -116,7 +122,12 @@ export function Contact() {
                     <FormItem>
                       <FormLabel className="text-sm font-bold ml-2">Email Address</FormLabel>
                       <FormControl>
-                        <Input placeholder="kevin@example.com" {...field} className="clay h-14 px-6 border-none bg-white/50 focus:bg-white transition-all text-lg" suppressHydrationWarning />
+                        <Input 
+                          placeholder="kevin@example.com" 
+                          {...field} 
+                          className="clay h-14 px-6 border-none bg-white/5 focus:bg-white/10 transition-all text-lg text-white placeholder:text-white/30" 
+                          suppressHydrationWarning 
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -132,7 +143,7 @@ export function Contact() {
                         <Textarea 
                           placeholder="What's on your mind?" 
                           {...field} 
-                          className="clay p-6 border-none bg-white/50 focus:bg-white transition-all min-h-[180px] resize-none text-lg" 
+                          className="clay p-6 border-none bg-white/5 focus:bg-white/10 transition-all min-h-[180px] resize-none text-lg text-white placeholder:text-white/30" 
                           suppressHydrationWarning
                         />
                       </FormControl>
