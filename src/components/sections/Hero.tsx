@@ -87,6 +87,7 @@ export function Hero() {
                 fill
                 className="object-cover object-top scale-105 group-hover:scale-100 transition-transform duration-700"
                 priority
+                data-ai-hint={portrait?.imageHint || "professional headshot"}
               />
               <div className="absolute bottom-6 right-6 w-20 h-20 bg-white rounded-full p-1 shadow-2xl animate-spin-slow flex items-center justify-center border-4 border-primary z-20">
                 <div className="text-[7px] font-black text-black text-center uppercase tracking-widest leading-tight">

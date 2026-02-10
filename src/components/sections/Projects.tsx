@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
@@ -90,6 +91,7 @@ export function Projects() {
                       fill
                       className="object-cover transition-all duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
                       priority={index === 0}
+                      data-ai-hint={img?.imageHint || "project preview"}
                     />
                     
                     {/* Status Badge Overlay */}

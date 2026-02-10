@@ -3,26 +3,26 @@
     {
       "id": "project-1",
       "description": "Cloud server infrastructure visualization showing nodes and containers.",
-      "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjbG91ZCUyMGNvbXB1dGluZ3xlbnwwfHx8fDE3NzA2MjE5OTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "cloud computing"
+      "imageUrl": "https://images.unsplash.com/photo-1683669446316-de6eb929dc56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjbG91ZCUyMGluZnJhc3RydWN0dXJlfGVufDB8fHx8MTc3MDU3NTU3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cloud infrastructure"
     },
     {
       "id": "project-2",
       "description": "A devops pipeline diagram or terminal showing automated tests.",
-      "imageUrl": "https://images.unsplash.com/photo-1607791375727-43c46b1b22e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkZXZvcHN8ZW58MHx8fHwxNzcwNjIxOTk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1674420888888-15f055ffb627?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkZXZvcHMlMjBwaXBlbGluZXxlbnwwfHx8fDE3NzA2ODgyMzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "devops pipeline"
     },
     {
       "id": "project-3",
-      "description": "A group of tech volunteers collaborating at a hackathon.",
-      "imageUrl": "https://images.unsplash.com/photo-1531482615713-2afd69097998?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx0ZWNoJTIwY29tbXVuaXR5fGVufDB8fHx8MTc3MDYyMTk5NHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "tech community"
+      "description": "Real-time monitoring dashboard with graphs and metrics.",
+      "imageUrl": "https://images.unsplash.com/photo-1761141535657-af58f8a29407?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb25pdG9yaW5nJTIwZGFzaGJvYXJkfGVufDB8fHx8MTc3MDY4ODIzNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "monitoring dashboard"
     },
     {
       "id": "hero-portrait",
       "description": "Professional photo of Kevin George.",
       "imageUrl": "https://media.licdn.com/dms/image/v2/D4E03AQFgPLGtRnTcrA/profile-displayphoto-scale_400_400/B4EZq5TA4fIwAk-/0/1764045362808?e=1772064000&v=beta&t=WXn8sGJqU9STP-dnVeHGOiF9E2AaTQ_Lsms-2lG_RCw",
-      "imageHint": "kevin george"
+      "imageHint": "professional headshot"
     }
   ]
 }
