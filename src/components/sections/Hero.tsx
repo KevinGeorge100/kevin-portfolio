@@ -63,7 +63,7 @@ export function Hero() {
               </Link>
               
               <Link 
-                href="/resume.pdf" 
+                href="https://drive.google.com/file/d/1pajAscnxoslBCxL6eP3C479IV5HQ9mD7/view?usp=sharing" 
                 target="_blank"
                 className="group relative h-14 px-8 rounded-full bg-white/5 border border-white/10 text-white font-bold text-base flex items-center gap-3 hover:bg-white/10 hover:scale-105 transition-all"
               >
