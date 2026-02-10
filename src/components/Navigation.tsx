@@ -1,10 +1,8 @@
-
 "use client";
 
 import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Briefcase } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -48,15 +46,7 @@ export function Navigation() {
           ))}
         </div>
 
-        <div className="h-6 w-px bg-white/10 hidden md:block" />
-
-        <Link 
-          href="#contact" 
-          className="flex items-center gap-2 px-4 py-1.5 bg-primary rounded-full text-[11px] font-black uppercase tracking-tighter text-black hover:scale-105 transition-all shadow-lg shadow-primary/20"
-        >
-          <Briefcase className="w-3 h-3" />
-          Hire Me
-        </Link>
+        {/* Vertical separator and Hire Me button removed for a cleaner look */}
       </div>
     </nav>
   );
