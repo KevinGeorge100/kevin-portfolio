@@ -1,6 +1,8 @@
 
 import type {NextConfig} from 'next';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
@@ -9,8 +11,9 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   output: 'export',
-  basePath: '/kevin-portfolio',
-  assetPrefix: '/kevin-portfolio',
+  // Only apply subpath routing in production (GitHub Pages)
+  basePath: isProd ? '/kevin-portfolio' : '',
+  assetPrefix: isProd ? '/kevin-portfolio' : '',
   trailingSlash: true,
   images: {
     unoptimized: true,
