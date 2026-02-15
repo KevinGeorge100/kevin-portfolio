@@ -5,7 +5,14 @@ import { MessageSquare, Send, X, Bot, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { devopsAssistant } from "@/ai/flows/devops-assistant";
+// import { devopsAssistant } from "@/ai/flows/devops-assistant";
+// Mocking AI for static export (GitHub Pages)
+const devopsAssistant = async (input: { question: string }) => {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  return {
+    answer: "I am currently running in a static environment (GitHub Pages), so I cannot process live AI queries. Please contact Kevin directly via email or LinkedIn for more information!"
+  };
+};
 import { cn } from "@/lib/utils";
 
 interface Message {
@@ -70,7 +77,7 @@ export const AiAssistant = React.memo(function AiAssistant() {
               <X className="h-5 w-5" />
             </Button>
           </div>
-          
+
           <ScrollArea className="flex-1 p-4 bg-black/40">
             <div className="space-y-4">
               {messages.map((msg) => (
@@ -95,8 +102,8 @@ export const AiAssistant = React.memo(function AiAssistant() {
           </ScrollArea>
 
           <div className="p-4 border-t border-white/10 bg-black/20 flex gap-2">
-            <Input 
-              placeholder="Ask a question..." 
+            <Input
+              placeholder="Ask a question..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
@@ -108,7 +115,7 @@ export const AiAssistant = React.memo(function AiAssistant() {
           </div>
         </div>
       ) : (
-        <Button 
+        <Button
           onClick={() => setIsOpen(true)}
           className="w-16 h-16 rounded-full bg-primary text-black shadow-2xl hover:scale-110 transition-all duration-300 group"
         >
