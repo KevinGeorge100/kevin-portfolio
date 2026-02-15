@@ -1,7 +1,7 @@
 
 import type {Metadata} from 'next';
 import './globals.css';
-import SplashCursor from '@/components/ui/splash-cursor';
+import { SplashCursorWrapper } from '@/components/SplashCursorWrapper';
 
 export const metadata: Metadata = {
   title: 'Kevin George | DevOps Engineer',
@@ -21,7 +21,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased bg-background text-foreground">
-        <SplashCursor />
+        <SplashCursorWrapper />
         {children}
       </body>
     </html>

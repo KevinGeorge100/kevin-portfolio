@@ -1,37 +1,11 @@
 
-import { Terminal, Server, Cpu, Code2, MapPin, Globe2, ArrowRight } from "lucide-react";
+import { MapPin, Globe2, ArrowRight, Terminal } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { Magnetic } from "@/components/ui/magnetic";
 import Link from "next/link";
+import { aboutCards } from "@/lib/constants/about";
 
 export function About() {
-  const cards = [
-    {
-      icon: <Cpu className="h-8 w-8" />,
-      title: "Platform Engineering",
-      desc: "Building internal developer platforms that simplify complex cloud deployments and improve DX.",
-      color: "var(--primary)"
-    },
-    {
-      icon: <Server className="h-8 w-8" />,
-      title: "Orchestration",
-      desc: "Hands-on experience with Kubernetes, Docker, and managing resilient microservice fleets.",
-      color: "var(--accent)"
-    },
-    {
-      icon: <Terminal className="h-8 w-8" />,
-      title: "Automation (IaC)",
-      desc: "Treating infrastructure as code using Terraform and Ansible for reproducible environments.",
-      color: "var(--primary)"
-    },
-    {
-      icon: <Code2 className="h-8 w-8" />,
-      title: "Full-Stack Context",
-      desc: "Understanding the developer workflow to build better pipelines and developer experiences.",
-      color: "var(--accent)"
-    }
-  ];
-
   return (
     <section id="about" className="py-32 relative overflow-hidden bg-background">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -103,24 +77,27 @@ export function About() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {cards.map((card, i) => (
-            <SpotlightCard 
-              key={i} 
-              className="reveal-on-scroll" 
-              style={{ transitionDelay: `${i * 100}ms` }}
-              spotlightColor={card.color === 'var(--primary)' ? 'rgba(121, 255, 0, 0.1)' : 'rgba(168, 85, 247, 0.1)'}
-            >
-              <div className="clay p-8 h-full border border-white/5 hover:border-white/20 transition-all duration-500 group">
-                <div className="mb-6 p-4 w-fit rounded-2xl clay bg-white/5 text-primary group-hover:bg-primary group-hover:text-black transition-all duration-500">
-                  {card.icon}
+          {aboutCards.map((card, i) => {
+            const IconComponent = card.icon;
+            return (
+              <SpotlightCard 
+                key={i} 
+                className="reveal-on-scroll" 
+                style={{ transitionDelay: `${i * 100}ms` }}
+                spotlightColor={card.color === 'var(--primary)' ? 'rgba(121, 255, 0, 0.1)' : 'rgba(168, 85, 247, 0.1)'}
+              >
+                <div className="clay p-8 h-full border border-white/5 hover:border-white/20 transition-all duration-500 group">
+                  <div className="mb-6 p-4 w-fit rounded-2xl clay bg-white/5 text-primary group-hover:bg-primary group-hover:text-black transition-all duration-500">
+                    <IconComponent className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-black text-white mb-3 tracking-tight">{card.title}</h3>
+                  <p className="text-sm text-white/40 leading-relaxed font-medium group-hover:text-white/60 transition-colors">
+                    {card.desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-black text-white mb-3 tracking-tight">{card.title}</h3>
-                <p className="text-sm text-white/40 leading-relaxed font-medium group-hover:text-white/60 transition-colors">
-                  {card.desc}
-                </p>
-              </div>
-            </SpotlightCard>
-          ))}
+              </SpotlightCard>
+            );
+          })}
         </div>
       </div>
       

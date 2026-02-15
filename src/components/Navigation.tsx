@@ -15,11 +15,23 @@ export function Navigation() {
   const [scrolled, setScrolled] = React.useState(false);
 
   React.useEffect(() => {
+    let timeoutId: NodeJS.Timeout | null = null;
+    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      // Throttle scroll events for better performance
+      if (timeoutId !== null) return;
+      
+      timeoutId = setTimeout(() => {
+        setScrolled(window.scrollY > 20);
+        timeoutId = null;
+      }, 100);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timeoutId !== null) clearTimeout(timeoutId);
+    };
   }, []);
 
   return (

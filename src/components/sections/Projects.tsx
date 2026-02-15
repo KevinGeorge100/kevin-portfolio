@@ -1,45 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Terminal, Activity, Zap, Cpu, Server, Shield } from "lucide-react";
+import { ExternalLink, Github, Zap } from "lucide-react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
-
-const projects = [
-  {
-    id: "project-1",
-    title: "K8s Microservices Lab",
-    description: "A complete platform-as-a-service prototype featuring automated horizontal scaling, Redis caching, and integrated Istio service mesh for traffic management.",
-    tags: ["Kubernetes", "Docker", "Prometheus", "Helm"],
-    link: "https://github.com/KevinGeorge100",
-    repo: "https://github.com/KevinGeorge100",
-    status: "Healthy",
-    metrics: "99.9% Uptime",
-    icon: <Server className="h-5 w-5" />
-  },
-  {
-    id: "project-2",
-    title: "GitOps CI/CD Pipeline",
-    description: "Multi-environment deployment pipeline using GitHub Actions and ArgoCD. Implements canary releases and blue/green deployment strategies for zero-downtime.",
-    tags: ["ArgoCD", "Terraform", "Actions"],
-    link: "https://github.com/KevinGeorge100",
-    repo: "https://github.com/KevinGeorge100",
-    status: "Stable",
-    metrics: "2m Build Time",
-    icon: <Zap className="h-5 w-5" />
-  },
-  {
-    id: "project-3",
-    title: "Infra-Monitor Dashboard",
-    description: "Real-time observability platform for monitoring server health and application latency using Grafana. Features custom alert rules and automated incident reporting.",
-    tags: ["Grafana", "Prometheus", "ELK Stack"],
-    link: "https://github.com/KevinGeorge100",
-    repo: "https://github.com/KevinGeorge100",
-    status: "Live",
-    metrics: "15ms Latency",
-    icon: <Activity className="h-5 w-5" />
-  }
-];
+import { projects } from "@/lib/constants/projects";
 
 export function Projects() {
   return (
@@ -73,6 +38,7 @@ export function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => {
             const img = PlaceHolderImages.find(p => p.id === project.id);
+            const IconComponent = project.icon;
             return (
               <SpotlightCard 
                 key={project.id} 
@@ -116,14 +82,14 @@ export function Projects() {
                         ))}
                       </div>
                       <div className="flex items-center gap-1.5 text-white/30 text-[9px] font-black uppercase tracking-widest">
-                        <Activity className="h-3 w-3 text-accent" />
+                        <IconComponent className="h-3 w-3 text-accent" />
                         {project.metrics}
                       </div>
                     </div>
 
                     <h3 className="text-2xl font-black text-white mb-4 tracking-tight group-hover:text-primary transition-colors flex items-center gap-3">
                       <span className="p-2 rounded-xl bg-white/5 text-primary">
-                        {project.icon}
+                        <IconComponent className="h-5 w-5" />
                       </span>
                       {project.title}
                     </h3>
