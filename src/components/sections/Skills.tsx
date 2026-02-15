@@ -1,28 +1,6 @@
-import { CheckCircle2, Cloud, Terminal, ShieldCheck } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
-
-const skillCategories = [
-  {
-    title: "Cloud & Infra",
-    icon: <Cloud className="h-7 w-7" />,
-    skills: ["AWS (EKS, EC2, S3)", "Terraform (IaC)", "Kubernetes & Helm", "Docker Orchestration", "Nginx & Load Balancing"],
-    variant: "clay-primary"
-  },
-  {
-    title: "DevOps & Tooling",
-    icon: <Terminal className="h-7 w-7" />,
-    skills: ["CI/CD (GitHub Actions)", "Prometheus & Grafana", "ArgoCD (GitOps)", "Linux SysAdmin", "Ansible Configuration"],
-    variant: "clay"
-  },
-  {
-    title: "Development",
-    icon: <ShieldCheck className="h-7 w-7" />,
-    skills: ["Bash/Shell Scripting", "Python for Automation", "Golang Basics", "Security Best Practices", "REST API Context"],
-    variant: "clay-accent"
-  }
-];
-
-const softSkills = ["System Architecture", "Incident Management", "Team Leadership", "Cost Optimization", "Mentorship"];
+import { skillCategories, softSkills } from "@/lib/constants/skills";
 
 export function Skills() {
   return (
@@ -41,29 +19,32 @@ export function Skills() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {skillCategories.map((category, index) => (
-            <SpotlightCard 
-              key={category.title} 
-              className="reveal-on-scroll" 
-              style={{ transitionDelay: `${index * 150}ms` }}
-              spotlightColor={category.variant === 'clay-primary' ? 'rgba(121, 255, 0, 0.1)' : 'rgba(168, 85, 247, 0.1)'}
-            >
-              <div className={`clay p-10 h-full border border-white/5 hover:border-white/20 transition-all duration-500 group rounded-[3rem]`}>
-                <div className={`mb-8 inline-flex p-5 rounded-[2rem] clay bg-white/5 text-primary group-hover:scale-110 transition-transform duration-500`}>
-                  {category.icon}
+          {skillCategories.map((category, index) => {
+            const IconComponent = category.icon;
+            return (
+              <SpotlightCard 
+                key={category.title} 
+                className="reveal-on-scroll" 
+                style={{ transitionDelay: `${index * 150}ms` }}
+                spotlightColor={category.variant === 'clay-primary' ? 'rgba(121, 255, 0, 0.1)' : 'rgba(168, 85, 247, 0.1)'}
+              >
+                <div className={`clay p-10 h-full border border-white/5 hover:border-white/20 transition-all duration-500 group rounded-[3rem]`}>
+                  <div className={`mb-8 inline-flex p-5 rounded-[2rem] clay bg-white/5 text-primary group-hover:scale-110 transition-transform duration-500`}>
+                    <IconComponent className="h-7 w-7" />
+                  </div>
+                  <h3 className="text-2xl font-black text-white mb-8 tracking-tight uppercase italic">{category.title}</h3>
+                  <ul className="space-y-4">
+                    {category.skills.map(skill => (
+                      <li key={skill} className="flex items-center text-white/40 group-hover:text-white/70 transition-colors font-bold text-sm">
+                        <CheckCircle2 className="h-4 w-4 text-primary mr-3 flex-shrink-0" />
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-2xl font-black text-white mb-8 tracking-tight uppercase italic">{category.title}</h3>
-                <ul className="space-y-4">
-                  {category.skills.map(skill => (
-                    <li key={skill} className="flex items-center text-white/40 group-hover:text-white/70 transition-colors font-bold text-sm">
-                      <CheckCircle2 className="h-4 w-4 text-primary mr-3 flex-shrink-0" />
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </SpotlightCard>
-          ))}
+              </SpotlightCard>
+            );
+          })}
         </div>
 
         <div className="reveal-on-scroll">

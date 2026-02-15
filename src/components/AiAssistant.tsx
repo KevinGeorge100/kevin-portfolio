@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import { MessageSquare, Send, X, Bot, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,31 +8,54 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { devopsAssistant } from "@/ai/flows/devops-assistant";
 import { cn } from "@/lib/utils";
 
-export function AiAssistant() {
+interface Message {
+  id: string;
+  role: "user" | "ai";
+  text: string;
+}
+
+export const AiAssistant = React.memo(function AiAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState<{ role: "user" | "ai"; text: string }[]>([
-    { role: "ai", text: "Hi! I'm Kevin's AI assistant. Ask me anything about his projects or skills!" },
+  const [messages, setMessages] = useState<Message[]>([
+    { 
+      id: "welcome-msg",
+      role: "ai", 
+      text: "Hi! I'm Kevin's AI assistant. Ask me anything about his projects or skills!" 
+    },
   ]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSend = async () => {
+  const handleSend = useCallback(async () => {
     if (!input.trim() || isLoading) return;
 
     const userMsg = input.trim();
+    const userMsgId = `user-${Date.now()}`;
     setInput("");
-    setMessages((prev) => [...prev, { role: "user", text: userMsg }]);
+    setMessages((prev) => [...prev, { id: userMsgId, role: "user", text: userMsg }]);
     setIsLoading(true);
 
     try {
       const result = await devopsAssistant({ question: userMsg });
-      setMessages((prev) => [...prev, { role: "ai", text: result.answer }]);
+      setMessages((prev) => [...prev, { 
+        id: `ai-${Date.now()}`,
+        role: "ai", 
+        text: result.answer 
+      }]);
     } catch (error) {
-      setMessages((prev) => [...prev, { role: "ai", text: "Sorry, I'm having trouble connecting right now. Please try again later!" }]);
+      setMessages((prev) => [...prev, { 
+        id: `error-${Date.now()}`,
+        role: "ai", 
+        text: "Sorry, I'm having trouble connecting right now. Please try again later!" 
+      }]);
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [input, isLoading]);
+
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === "Enter") handleSend();
+  }, [handleSend]);
 
   return (
     <div className="fixed bottom-8 right-8 z-[100]">
@@ -50,8 +73,8 @@ export function AiAssistant() {
           
           <ScrollArea className="flex-1 p-4 bg-black/40">
             <div className="space-y-4">
-              {messages.map((msg, i) => (
-                <div key={i} className={cn(
+              {messages.map((msg) => (
+                <div key={msg.id} className={cn(
                   "flex flex-col max-w-[80%]",
                   msg.role === "user" ? "ml-auto items-end" : "mr-auto items-start"
                 )}>
@@ -76,7 +99,7 @@ export function AiAssistant() {
               placeholder="Ask a question..." 
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSend()}
+              onKeyDown={handleKeyDown}
               className="clay border-none bg-white/5 focus-visible:ring-primary h-10 px-4 text-sm"
             />
             <Button size="icon" onClick={handleSend} disabled={isLoading} className="rounded-full bg-primary hover:bg-primary/80 text-black shrink-0">
@@ -94,4 +117,4 @@ export function AiAssistant() {
       )}
     </div>
   );
-}
+});
